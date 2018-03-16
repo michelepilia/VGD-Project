@@ -19,10 +19,19 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		CountdownText.text = ("" + (timeLeft / 60) + ":" + (timeLeft % 60));
-		//CountdownText.text = ("" + timeLeft);
+		if ((timeLeft % 60) < 10) {
+			CountdownText.text = ("" + (timeLeft / 60) + ":0" + (timeLeft % 60));
+		} else {
+			CountdownText.text = ("" + (timeLeft / 60) + ":" + (timeLeft % 60));
+		}
+			
+		if(timeLeft <= 59 && timeLeft > 9)
+		{
+			CountdownText.color = Color.yellow;
+		}
 
-		if(timeLeft <= 10)
+
+		if(timeLeft <= 9)
 		{
 			CountdownText.color = Color.red;
 		}
