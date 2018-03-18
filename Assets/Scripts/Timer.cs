@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Riferimenti al link: https://www.youtube.com/watch?v=x-C95TuQtf0
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +10,7 @@ public class Timer : MonoBehaviour {
 
 	public int timeLeft = 180;
 	public Text CountdownText;
+	private bool activateCheckpoint = true;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +54,14 @@ public class Timer : MonoBehaviour {
 		{
 			yield return new WaitForSeconds (1);
 			timeLeft--;
+		}
+	}
+
+	public void updateTime()
+	{
+		if (activateCheckpoint == true) {
+			timeLeft += 10;
+			activateCheckpoint = false;
 		}
 	}
 }
