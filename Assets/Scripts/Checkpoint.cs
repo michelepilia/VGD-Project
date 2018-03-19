@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
@@ -41,7 +42,7 @@ public class Checkpoint : MonoBehaviour {
 				GameObject.Find ("Car").SendMessage ("updateTime");
 				checkTimeBonus01 = false;
 				checkTimeBonus02 = true;
-				Debug.Log (collider.gameObject.name);
+				//Debug.Log (collider.gameObject.name);
 			}
 				break;
 		case "Checkpoint02":

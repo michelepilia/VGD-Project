@@ -9,7 +9,9 @@ using System.Collections;
 public class Timer : MonoBehaviour {
 
 	public int timeLeft = 180;
+	public int bonusTime = 10;
 	public Text CountdownText;
+	public Text BonusTimeText;
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +60,14 @@ public class Timer : MonoBehaviour {
 
 	public void updateTime()
 	{
-		timeLeft += 10;
+		timeLeft += bonusTime;
+		BonusTimeText.text = "+" + bonusTime + " sec";
+		StartCoroutine ("AddTime");
+	}
+
+	IEnumerator AddTime()
+	{
+		yield return new WaitForSeconds(2);
+		BonusTimeText.text = "";
 	}
 }
