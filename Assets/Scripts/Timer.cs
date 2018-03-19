@@ -10,7 +10,6 @@ public class Timer : MonoBehaviour {
 
 	public int timeLeft = 180;
 	public Text CountdownText;
-	private bool activateCheckpoint = true;
 
 	// Use this for initialization
 	void Start () {
@@ -59,9 +58,6 @@ public class Timer : MonoBehaviour {
 
 	public void updateTime()
 	{
-		if (activateCheckpoint == true) {
-			timeLeft += 10;
-			activateCheckpoint = false;
-		}
+		timeLeft += 10;
 	}
 }
