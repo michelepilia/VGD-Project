@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour {
 	public int bonusTime = 10;
 	public Text CountdownText;
 	public Text BonusTimeText;
+	public GameObject GameOverMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -41,10 +42,14 @@ public class Timer : MonoBehaviour {
 		}
 
 
-		if(timeLeft <= 0)
+		if(timeLeft < 0)
 		{
 			StopCoroutine ("LoseTime");
 			CountdownText.text = "Tempo Scaduto!";
+		}
+
+		if (CountdownText.text.Equals("Tempo Scaduto!")) {
+			StartCoroutine ("GameOver");
 		}
 		
 	}
@@ -60,14 +65,24 @@ public class Timer : MonoBehaviour {
 
 	public void updateTime()
 	{
-		timeLeft += bonusTime;
-		BonusTimeText.text = "+" + bonusTime + " sec";
-		StartCoroutine ("AddTime");
+		if (timeLeft >= 0) {
+			timeLeft += bonusTime;
+			BonusTimeText.text = "+" + bonusTime + " sec";
+			StartCoroutine ("AddTime");
+		}
 	}
 
 	IEnumerator AddTime()
 	{
 		yield return new WaitForSeconds(2);
 		BonusTimeText.text = "";
+	}
+
+	IEnumerator GameOver()
+	{
+		yield return new WaitForSeconds(1);
+		GameOverMenu.SetActive (true);
+		Time.timeScale = 0f;
+		AudioListener.pause = true;
 	}
 }
