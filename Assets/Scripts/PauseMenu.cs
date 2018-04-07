@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Riferimento al link: https://www.youtube.com/watch?v=JivuXdrIHK0
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,6 +43,14 @@ public class PauseMenu : MonoBehaviour {
 	{
 		Time.timeScale = 1f;
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void Restart()
+	{
+		Resume ();
+		Time.timeScale = 1f;
+		Scene restartGame = SceneManager.GetActiveScene ();
+		SceneManager.LoadScene (restartGame.buildIndex);
 	}
 
 	public void QuitGame()

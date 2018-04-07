@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
 public class Checkpoint : MonoBehaviour {
 
 	public MeshRenderer Checkpoint01;
@@ -13,6 +12,11 @@ public class Checkpoint : MonoBehaviour {
 	public MeshRenderer Checkpoint06;
 	public MeshRenderer Checkpoint07;
 
+	public int totCheckpoints = 7;
+	public int passedCheckpoints = 0;
+
+	public Text NumberOfCheckpoints;
+
 	public bool checkTimeBonus01 = true;
 	public bool checkTimeBonus02 = false;
 	public bool checkTimeBonus03 = false;
@@ -22,6 +26,9 @@ public class Checkpoint : MonoBehaviour {
 	public bool checkTimeBonus07 = false;
 
 	void Start(){
+
+		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+		
 		Checkpoint02.enabled = false;
 		Checkpoint03.enabled = false;
 		Checkpoint04.enabled = false;
@@ -29,7 +36,15 @@ public class Checkpoint : MonoBehaviour {
 		Checkpoint06.enabled = false;
 		Checkpoint07.enabled = false;
 
+	}
 
+	void Update(){
+
+		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+
+		if(passedCheckpoints == totCheckpoints){
+			NumberOfCheckpoints.color = Color.green;
+		}
 	}
 
 	private void OnTriggerEnter(Collider collider)
@@ -42,7 +57,8 @@ public class Checkpoint : MonoBehaviour {
 				GameObject.Find ("Car").SendMessage ("updateTime");
 				checkTimeBonus01 = false;
 				checkTimeBonus02 = true;
-				//Debug.Log (collider.gameObject.name);
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 		case "Checkpoint02":
@@ -53,6 +69,7 @@ public class Checkpoint : MonoBehaviour {
 				checkTimeBonus02 = false;
 				checkTimeBonus03 = true;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 			case "Checkpoint03":
@@ -63,6 +80,7 @@ public class Checkpoint : MonoBehaviour {
 				checkTimeBonus03 = false;
 				checkTimeBonus04 = true;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 			case "Checkpoint04":
@@ -73,6 +91,7 @@ public class Checkpoint : MonoBehaviour {
 				checkTimeBonus04 = false;
 				checkTimeBonus05 = true;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 			case "Checkpoint05":
@@ -83,6 +102,7 @@ public class Checkpoint : MonoBehaviour {
 				checkTimeBonus05 = false;
 				checkTimeBonus06 = true;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 			case "Checkpoint06":
@@ -93,6 +113,7 @@ public class Checkpoint : MonoBehaviour {
 				checkTimeBonus06 = false;
 				checkTimeBonus07 = true;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 			case "Checkpoint07":
@@ -101,6 +122,7 @@ public class Checkpoint : MonoBehaviour {
 				GameObject.Find ("Car").SendMessage ("updateTime");
 				checkTimeBonus07 = false;
 				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
 			}
 				break;
 		}

@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -13,10 +13,14 @@ public class Timer : MonoBehaviour {
 	public Text CountdownText;
 	public Text BonusTimeText;
 	public GameObject GameOverMenu;
+	public GameObject CompletedLevelMenu;
+	public int totCheckpoints = 7;
+	public int passedCheckpoints = 0;
 
 	// Use this for initialization
 	void Start () {
 
+		//parte il countdown
 		StartCoroutine("LoseTime");
 		
 	}
@@ -41,7 +45,7 @@ public class Timer : MonoBehaviour {
 			CountdownText.color = Color.red;
 		}
 
-
+		//game over
 		if(timeLeft < 0)
 		{
 			StopCoroutine ("LoseTime");
@@ -50,6 +54,15 @@ public class Timer : MonoBehaviour {
 
 		if (CountdownText.text.Equals("Tempo Scaduto!")) {
 			StartCoroutine ("GameOver");
+		}
+
+		//livello completato
+		if(timeLeft >= 0 && passedCheckpoints == totCheckpoints)
+		{
+			StopCoroutine ("LoseTime");
+			CountdownText.color = Color.green;
+			Debug.Log ("Livello completato");
+			StartCoroutine ("CompletedLevel");
 		}
 		
 	}
@@ -65,7 +78,8 @@ public class Timer : MonoBehaviour {
 
 	public void updateTime()
 	{
-		if (timeLeft >= 0) {
+		passedCheckpoints++;
+		if (timeLeft >= 0 && passedCheckpoints < totCheckpoints) {
 			timeLeft += bonusTime;
 			BonusTimeText.text = "+" + bonusTime + " sec";
 			StartCoroutine ("AddTime");
@@ -80,9 +94,18 @@ public class Timer : MonoBehaviour {
 
 	IEnumerator GameOver()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds (1);
 		GameOverMenu.SetActive (true);
 		Time.timeScale = 0f;
 		AudioListener.pause = true;
 	}
+
+	IEnumerator CompletedLevel()
+	{
+		yield return new WaitForSeconds (1);
+		CompletedLevelMenu.SetActive (true);
+		Time.timeScale = 0f;
+		AudioListener.pause = true;
+	}
+		
 }
