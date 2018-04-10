@@ -54,7 +54,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus01 == true) {
 				Checkpoint01.enabled = false;
 				Checkpoint02.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus01 = false;
 				checkTimeBonus02 = true;
 				Debug.Log (collider.gameObject.name);
@@ -65,7 +65,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus02 == true) {
 				Checkpoint02.enabled = false;
 				Checkpoint03.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus02 = false;
 				checkTimeBonus03 = true;
 				Debug.Log (collider.gameObject.name);
@@ -76,7 +76,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus03 == true) {
 				Checkpoint03.enabled = false;
 				Checkpoint04.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus03 = false;
 				checkTimeBonus04 = true;
 				Debug.Log (collider.gameObject.name);
@@ -87,7 +87,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus04 == true) {
 				Checkpoint04.enabled = false;
 				Checkpoint05.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus04 = false;
 				checkTimeBonus05 = true;
 				Debug.Log (collider.gameObject.name);
@@ -98,7 +98,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus05 == true) {
 				Checkpoint05.enabled = false;
 				Checkpoint06.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus05 = false;
 				checkTimeBonus06 = true;
 				Debug.Log (collider.gameObject.name);
@@ -109,7 +109,7 @@ public class Checkpoint : MonoBehaviour {
 			if (checkTimeBonus06 == true) {
 				Checkpoint06.enabled = false;
 				Checkpoint07.enabled = true;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus06 = false;
 				checkTimeBonus07 = true;
 				Debug.Log (collider.gameObject.name);
@@ -119,7 +119,7 @@ public class Checkpoint : MonoBehaviour {
 			case "Checkpoint07":
 			if (checkTimeBonus07 == true) {
 				Checkpoint07.enabled = false;
-				GameObject.Find ("Car").SendMessage ("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
 				checkTimeBonus07 = false;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
