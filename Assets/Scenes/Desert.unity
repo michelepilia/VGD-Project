@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39806977, g: 0.37276202, b: 0.29058236, a: 1}
+  m_IndirectSpecularColor: {r: 0.39808753, g: 0.37283567, b: 0.29063863, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6423,11 +6423,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
-      value: Car (Fiat Punto)
+      value: FiatPunto
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_TagString
@@ -7074,11 +7074,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
-      value: Car (Ford Focus)
+      value: FordFocus
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_TagString
@@ -13543,7 +13543,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
-      value: Car (Ford Focus sporca)
+      value: FordFocusSporca
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_TagString
@@ -20332,6 +20332,7 @@ GameObject:
   - component: {fileID: 1283320989}
   - component: {fileID: 1283320990}
   - component: {fileID: 1283320991}
+  - component: {fileID: 1283320993}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -20454,6 +20455,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebbf66869e7e344080784875b01a81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1283320993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283320984}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20ecf4ba02cd154284a0475fd82f49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FiatPunto: {fileID: 1163681085}
+  FordFocus: {fileID: 1462078222}
+  FordFocusSporca: {fileID: 460419243}
+  Pickup: {fileID: 2088946154}
+  MitsubishiRally: {fileID: 1143033793}
 --- !u!4 &1289950359 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400056, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -28505,7 +28522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
-      value: Car (Pickup)
+      value: Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_IsActive
@@ -33026,7 +33043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
-      value: Car (Mitsubishi rally)
+      value: MitsubishiRally
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_TagString
