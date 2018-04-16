@@ -8,6 +8,8 @@ public class WaterCollider : MonoBehaviour {
 
 	public GameObject GameOverMenu;
 	public float timePause = 1.4f;
+	public enum Mode {Simple = 1, Hard = 2};
+	public Mode mode = Mode.Simple;
 
 	// Use this for initialization
 	void Start () {
@@ -19,9 +21,13 @@ public class WaterCollider : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter (Collider collider) {
-	
 		if (collider.gameObject.tag == "water") {
-			StartCoroutine("GameOver");
+			if (mode == Mode.Simple) {
+				StartCoroutine ("Reposition");
+			} else if (mode == Mode.Hard) {
+				StartCoroutine ("GameOver");
+			}
+
 		}
 	}
 
@@ -31,5 +37,11 @@ public class WaterCollider : MonoBehaviour {
 		Time.timeScale = 0f;
 		AudioListener.pause = true;
 	
+	}
+
+	IEnumerator Reposition() {
+		yield return new WaitForSeconds (timePause);
+		transform.rotation = Quaternion.Euler (0.0f, 0.0f, 0.0f);
+		transform.position = new Vector3(467.0f, 34.0f, 808.0f); 
 	}
 }
