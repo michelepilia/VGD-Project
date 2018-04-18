@@ -10,9 +10,11 @@ public class WaterCollider : MonoBehaviour {
 	public float timePause = 1.4f;
 	public enum Mode {Simple = 1, Hard = 2};
 	public Mode mode = Mode.Simple;
+	public Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -40,8 +42,9 @@ public class WaterCollider : MonoBehaviour {
 	}
 
 	IEnumerator Reposition() {
+		rb.velocity = new  Vector3(0, 0, 0);
 		yield return new WaitForSeconds (timePause);
-		transform.rotation = Quaternion.Euler (0.0f, 0.0f, 0.0f);
-		transform.position = new Vector3(467.0f, 34.0f, 808.0f); 
+		transform.position = new Vector3(565.05f, 20.0f, 888.0f); //1537, 0, 348
+		transform.rotation = Quaternion.Euler (15.0f, 114.0f, 10.0f);
 	}
 }
