@@ -13,6 +13,7 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject MitsubishiRally;
 	public ArrayList arrayCars = new ArrayList();
 	string activateCar;
+	//public GameObject car = new GameObject();
 
 	// Use this for initialization
 	void Start () {
@@ -23,18 +24,32 @@ public class ActivateCar : MonoBehaviour {
 		arrayCars.Add (Pickup);
 		arrayCars.Add (MitsubishiRally);
 
+		for (int i = 0; i < arrayCars.Count; i++) {
+				((GameObject)arrayCars [i]).SetActive (false);
+		}
+
 		activateCar = PlayerPrefs.GetString("selectedCar");
 
-		for (int i = 0; i < arrayCars.Count; i++) {
+
+		/*for (int i = 0; i < arrayCars.Count; i++) {
 			if (((GameObject)arrayCars [i]).name.ToString ().Equals (activateCar)) {
 				((GameObject)arrayCars [i]).SetActive (true);
+				break;
 			}
 
-		}
+		}*/
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		for (int i = 0; i < arrayCars.Count; i++) {
+			if (((GameObject)arrayCars [i]).name.ToString ().Equals (activateCar)) {
+				((GameObject)arrayCars [i]).SetActive (true);
+				break;
+			}
+
+		}
 
 	}
 }
