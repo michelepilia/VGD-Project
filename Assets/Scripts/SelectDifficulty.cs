@@ -31,7 +31,9 @@ public class SelectDifficulty : MonoBehaviour {
 
 	public void HardButton()
 	{
-		
+		gameDifficulty = "hard";
+		PlayerPrefs.SetString("gameDifficulty", gameDifficulty);
+		SceneManager.LoadScene ("SelectCar");
 	}
 
 	public void BackButton()

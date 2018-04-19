@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39806977, g: 0.37276202, b: 0.29058236, a: 1}
+  m_IndirectSpecularColor: {r: 0.39808753, g: 0.37283567, b: 0.29063863, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5042,6 +5042,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &275914284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8128,6 +8129,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &460419246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8139,10 +8141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b289d7aebc6f14a03bcade2e53a0dd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverMenu: {fileID: 0}
+  GameOverMenu: {fileID: 30088982}
   timePause: 1.4
-  mode: 1
   rb: {fileID: 0}
+  difficulty: 
 --- !u!4 &460419250 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -18046,6 +18048,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &1143033795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18085,10 +18088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b289d7aebc6f14a03bcade2e53a0dd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverMenu: {fileID: 0}
+  GameOverMenu: {fileID: 30088982}
   timePause: 1.4
-  mode: 1
   rb: {fileID: 0}
+  difficulty: 
 --- !u!4 &1143033800 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -18733,6 +18736,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &1163681087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18772,10 +18776,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b289d7aebc6f14a03bcade2e53a0dd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverMenu: {fileID: 0}
+  GameOverMenu: {fileID: 30088982}
   timePause: 1.4
-  mode: 1
   rb: {fileID: 0}
+  difficulty: 
 --- !u!4 &1163681092 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -22649,6 +22653,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!4 &1462078229 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -22666,8 +22671,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverMenu: {fileID: 30088982}
   timePause: 1.2
-  mode: 1
   rb: {fileID: 0}
+  difficulty: 
 --- !u!1 &1476004203
 GameObject:
   m_ObjectHideFlags: 0
@@ -32021,6 +32026,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 1603566128}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &2088946157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32032,10 +32038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b289d7aebc6f14a03bcade2e53a0dd58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverMenu: {fileID: 0}
+  GameOverMenu: {fileID: 30088982}
   timePause: 1.4
-  mode: 1
   rb: {fileID: 0}
+  difficulty: 
 --- !u!4 &2088946161 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}

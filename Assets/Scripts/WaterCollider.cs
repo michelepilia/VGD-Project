@@ -8,12 +8,14 @@ public class WaterCollider : MonoBehaviour {
 
 	public GameObject GameOverMenu;
 	public float timePause = 1.4f;
-	public enum Mode {Simple = 1, Hard = 2};
-	public Mode mode = Mode.Simple;
+	//public enum Mode {Simple = 1, Hard = 2};
+	//public Mode mode = Mode.Simple;
 	public Rigidbody rb;
+	public string difficulty;
 
 	// Use this for initialization
 	void Start () {
+		difficulty = PlayerPrefs.GetString("gameDifficulty");
 		rb = GetComponent<Rigidbody>();
 	}
 	
@@ -24,9 +26,10 @@ public class WaterCollider : MonoBehaviour {
 
 	private void OnTriggerEnter (Collider collider) {
 		if (collider.gameObject.tag == "water") {
-			if (mode == Mode.Simple) {
+			if (difficulty.Equals("easy")) {
 				StartCoroutine ("Reposition");
-			} else if (mode == Mode.Hard) {
+			} else if (difficulty.Equals("hard")) {
+				rb.velocity = new  Vector3(0, 0, 0);
 				StartCoroutine ("GameOver");
 			}
 

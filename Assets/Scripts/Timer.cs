@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
-	public int timeLeft = 180;
+	public int timeLeft;
 	public int bonusTime = 10;
 	public Text CountdownText;
 	public Text BonusTimeText;
@@ -16,9 +16,21 @@ public class Timer : MonoBehaviour {
 	public GameObject CompletedLevelMenu;
 	public int totCheckpoints = 7;
 	public int passedCheckpoints = 0;
+	public string difficulty;
 
 	// Use this for initialization
 	void Start () {
+
+		difficulty = PlayerPrefs.GetString("gameDifficulty");
+
+		if(difficulty.Equals("easy"))
+		{
+			timeLeft = 180;
+		}
+		else
+		{
+			timeLeft = 120;
+		}
 
 		//parte il countdown
 		StartCoroutine("LoseTime");
