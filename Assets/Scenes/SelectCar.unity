@@ -9860,6 +9860,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 0}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &649614259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13774,6 +13775,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 0}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &1016566326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23161,6 +23163,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 0}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!114 &1773658995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23925,6 +23928,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 0}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!4 &1808675301 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -24929,6 +24933,7 @@ MonoBehaviour:
   CompletedLevelMenu: {fileID: 0}
   totCheckpoints: 7
   passedCheckpoints: 0
+  difficulty: 
 --- !u!4 &1843013278 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}

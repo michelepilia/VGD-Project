@@ -46,6 +46,11 @@ public class Timer : MonoBehaviour {
 			CountdownText.text = ("" + (timeLeft / 60) + ":" + (timeLeft % 60));
 		}
 			
+		if(timeLeft > 59)
+		{
+			CountdownText.color = Color.white;
+		}
+
 		if(timeLeft <= 59 && timeLeft > 9)
 		{
 			CountdownText.color = Color.yellow;

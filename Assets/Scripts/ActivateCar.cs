@@ -29,15 +29,7 @@ public class ActivateCar : MonoBehaviour {
 		}
 
 		activateCar = PlayerPrefs.GetString("selectedCar");
-
-
-		/*for (int i = 0; i < arrayCars.Count; i++) {
-			if (((GameObject)arrayCars [i]).name.ToString ().Equals (activateCar)) {
-				((GameObject)arrayCars [i]).SetActive (true);
-				break;
-			}
-
-		}*/
+		AudioListener.pause = false;
 	}
 
 	// Update is called once per frame
