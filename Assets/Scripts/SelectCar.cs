@@ -11,8 +11,9 @@ public class SelectCar : MonoBehaviour {
 	public GameObject FordFocusSporca;
 	public GameObject Pickup;
 	public GameObject MitsubishiRally;
+	public GameObject Peugeot206;
 	public Text CarName;
-	public int nCar = 5;
+	public int nCar;
 	public string selectedCar;
 	//public int click = 0;
 
@@ -20,11 +21,13 @@ public class SelectCar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		nCar = 6;
 		arrayCars.Add (FiatPunto);
 		arrayCars.Add (FordFocus);
 		arrayCars.Add (FordFocusSporca);
 		arrayCars.Add (Pickup);
 		arrayCars.Add (MitsubishiRally);
+		arrayCars.Add (Peugeot206);
 
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (i == 0) {
@@ -60,6 +63,9 @@ public class SelectCar : MonoBehaviour {
 					break;
 				case "MitsubishiRally":
 					CarName.text = "Mitsubishi Rally";
+					break;
+				case "Peugeot206":
+					CarName.text = "Peugeot 206";
 					break;
 				}
 			}

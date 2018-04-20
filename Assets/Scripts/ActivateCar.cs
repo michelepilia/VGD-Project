@@ -11,6 +11,7 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject FordFocusSporca;
 	public GameObject Pickup;
 	public GameObject MitsubishiRally;
+	public GameObject Peugeot206;
 	public ArrayList arrayCars = new ArrayList();
 	string activateCar;
 	//public GameObject car = new GameObject();
@@ -23,6 +24,7 @@ public class ActivateCar : MonoBehaviour {
 		arrayCars.Add (FordFocusSporca);
 		arrayCars.Add (Pickup);
 		arrayCars.Add (MitsubishiRally);
+		arrayCars.Add (Peugeot206);
 
 		for (int i = 0; i < arrayCars.Count; i++) {
 				((GameObject)arrayCars [i]).SetActive (false);
