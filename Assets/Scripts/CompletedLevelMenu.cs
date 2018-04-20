@@ -17,7 +17,7 @@ public class CompletedLevelMenu : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		
+		SceneManager.LoadScene ("Forest");
 	}
 
 	public void LoadMenu()
