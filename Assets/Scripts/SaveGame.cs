@@ -10,22 +10,14 @@ public class SaveGame : MonoBehaviour {
 	string currentScene;
 	string currentCar;
 	string currentDifficulty;
-	string modGame;
+	string modGame; //serve a capire se si è avviata una nuova partita e se quindisi deve salvare
 
 	void Start()
 	{
-		currentScene = "Desert";
+		currentScene = SceneManager.GetActiveScene ().name.ToString ();
 		currentCar = PlayerPrefs.GetString("selectedCar");
 		currentDifficulty = PlayerPrefs.GetString("gameDifficulty");
 		modGame = PlayerPrefs.GetString ("modGame");
-
-
-		/*if (modGame.Equals ("newGame")) {
-			SaveFile ();
-			Debug.Log("Partita Salvata!");
-		} else {
-			LoadFile ();
-		}*/
 	}
 
 	void Update()
@@ -33,9 +25,8 @@ public class SaveGame : MonoBehaviour {
 		if (modGame.Equals ("newGame")) {
 			SaveFile ();
 			Debug.Log("Partita Salvata!");
-		} /*else {
-			LoadFile ();
-		}*/
+			modGame = "";
+		}
 	}
 
 	public void SaveFile()
