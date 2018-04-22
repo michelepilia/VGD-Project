@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-public class Checkpoint : MonoBehaviour {
+public class CheckpointDesert01 : MonoBehaviour {
 
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
