@@ -8,6 +8,8 @@ TagManager:
   - Checkpoint02
   - water
   - Car
+  - active_checkpoint
+  - Compass_Canvas
   layers:
   - Default
   - TransparentFX
