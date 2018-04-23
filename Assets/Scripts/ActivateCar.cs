@@ -14,6 +14,7 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject Peugeot206;
 	public ArrayList arrayCars = new ArrayList();
 	string activateCar;
+
 	//public GameObject car = new GameObject();
 
 	// Use this for initialization

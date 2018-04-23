@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CompletedLevelMenu : MonoBehaviour {
 
+	public int level;
+
+
 	// Use this for initialization
 	void Start () {
+		level = PlayerPrefs.GetInt ("level");
 		
 	}
 	
@@ -17,7 +21,9 @@ public class CompletedLevelMenu : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		SceneManager.LoadScene ("Forest");
+		level++;
+		PlayerPrefs.SetInt ("level", level);
+		SceneManager.LoadScene ("SelectCar");
 	}
 
 	public void LoadMenu()
