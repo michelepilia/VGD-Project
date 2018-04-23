@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour {
 	string currentDifficulty;
 	string selectedCar;
 	string difficulty;
+	int level;
 
 	// Use this for initialization
 	void Start () {
@@ -36,9 +37,11 @@ public class MainMenu : MonoBehaviour {
 	public void NewGame()
 	{
 		modGame = "newGame";
+		level = 1;
 		canvasMenuPrincipale.SetActive(false);
 		canvasDifficolta.SetActive (true);
 		PlayerPrefs.SetString ("modGame", modGame);
+		PlayerPrefs.SetInt ("level", level);
 	}
 
 	public void LoadGame()

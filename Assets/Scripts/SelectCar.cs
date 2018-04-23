@@ -13,21 +13,35 @@ public class SelectCar : MonoBehaviour {
 	public GameObject MitsubishiRally;
 	public GameObject Peugeot206;
 	public Text CarName;
-	public int nCar;
+	//public int nCar;
 	public string selectedCar;
+	public int level;
 	//public int click = 0;
 
 	public ArrayList arrayCars = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
-		nCar = 6;
-		arrayCars.Add (FiatPunto);
+		//nCar = 6;
+		level = PlayerPrefs.GetInt ("level");
+		/*arrayCars.Add (FiatPunto);
 		arrayCars.Add (FordFocus);
 		arrayCars.Add (FordFocusSporca);
 		arrayCars.Add (Pickup);
 		arrayCars.Add (MitsubishiRally);
-		arrayCars.Add (Peugeot206);
+		arrayCars.Add (Peugeot206);*/
+
+		switch (level) {
+		case 1:
+			arrayCars.Add (FiatPunto);
+			arrayCars.Add (Peugeot206);
+			break;
+		case 2:
+			arrayCars.Add (FiatPunto);
+			arrayCars.Add (Peugeot206);
+			arrayCars.Add (Pickup);
+			break;
+		}
 
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (i == 0) {
@@ -80,7 +94,7 @@ public class SelectCar : MonoBehaviour {
 				((GameObject)arrayCars [i]).SetActive (false);
 				//Debug.Log (i);
 				if (i == 0) {
-					((GameObject)arrayCars [i - 1 + nCar]).SetActive (true);
+					((GameObject)arrayCars [i - 1 + arrayCars.Count]).SetActive (true);
 				} else {
 					((GameObject)arrayCars [i - 1]).SetActive (true);
 				}
@@ -95,7 +109,7 @@ public class SelectCar : MonoBehaviour {
 			if (((GameObject)arrayCars [i]).activeSelf) {
 				((GameObject)arrayCars [i]).SetActive (false);
 				//Debug.Log ((i) /*% nCar*/);
-				((GameObject)arrayCars [(i + 1) % nCar]).SetActive (true);
+				((GameObject)arrayCars [(i + 1) % arrayCars.Count]).SetActive (true);
 				break;
 			}
 		}
@@ -112,7 +126,15 @@ public class SelectCar : MonoBehaviour {
 		}
 		//Awake ();
 		PlayerPrefs.SetString("selectedCar", selectedCar);
-		SceneManager.LoadScene ("Desert");
+
+		switch (level) {
+		case 1:
+			SceneManager.LoadScene ("Desert");
+			break;
+		case 2:
+			SceneManager.LoadScene ("Forest");
+			break;
+		}
 	}
 
 	/*void Awake () {
