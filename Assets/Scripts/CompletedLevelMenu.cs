@@ -26,6 +26,7 @@ public class CompletedLevelMenu : MonoBehaviour {
 		modGame = "newGame";
 		PlayerPrefs.SetString ("modGame", modGame);
 		PlayerPrefs.SetInt ("level", level);
+		Time.timeScale = 1f;
 		SceneManager.LoadScene ("SelectCar");
 	}
 

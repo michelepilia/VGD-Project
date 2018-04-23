@@ -22,6 +22,7 @@ public class SelectCar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		AudioListener.pause = false;
 		//nCar = 6;
 		level = PlayerPrefs.GetInt ("level");
 		/*arrayCars.Add (FiatPunto);
