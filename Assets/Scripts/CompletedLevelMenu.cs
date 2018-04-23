@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CompletedLevelMenu : MonoBehaviour {
 
 	public int level;
+	string modGame;
 
 
 	// Use this for initialization
@@ -22,6 +23,8 @@ public class CompletedLevelMenu : MonoBehaviour {
 	public void NextLevel()
 	{
 		level++;
+		modGame = "newGame";
+		PlayerPrefs.SetString ("modGame", modGame);
 		PlayerPrefs.SetInt ("level", level);
 		SceneManager.LoadScene ("SelectCar");
 	}
