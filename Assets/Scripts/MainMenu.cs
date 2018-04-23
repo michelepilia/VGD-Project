@@ -65,12 +65,14 @@ public class MainMenu : MonoBehaviour {
 		currentScene = data.scene;
 		currentCar = data.car;
 		currentDifficulty = data.difficulty;
+		level = data.level;
 
 		selectedCar = currentCar;
 		difficulty = currentDifficulty;
 		PlayerPrefs.SetString ("selectedCar", selectedCar);
 		PlayerPrefs.SetString ("gameDifficulty", difficulty);
 		PlayerPrefs.SetString ("modGame", modGame);
+		PlayerPrefs.SetInt ("level", level);
 		SceneManager.LoadScene (currentScene);
 	}
 

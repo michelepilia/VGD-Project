@@ -11,12 +11,14 @@ public class SaveGame : MonoBehaviour {
 	string currentCar;
 	string currentDifficulty;
 	string modGame; //serve a capire se si è avviata una nuova partita e se quindisi deve salvare
+	int currentLevel;
 
 	void Start()
 	{
 		currentScene = SceneManager.GetActiveScene ().name.ToString ();
 		currentCar = PlayerPrefs.GetString("selectedCar");
 		currentDifficulty = PlayerPrefs.GetString("gameDifficulty");
+		currentLevel = PlayerPrefs.GetInt ("level");
 		modGame = PlayerPrefs.GetString ("modGame");
 	}
 
@@ -37,7 +39,7 @@ public class SaveGame : MonoBehaviour {
 		if(File.Exists(destination)) file = File.OpenWrite(destination);
 		else file = File.Create(destination);
 
-		GameData data = new GameData(currentScene, currentCar, currentDifficulty);
+		GameData data = new GameData(currentScene, currentCar, currentDifficulty, currentLevel);
 		BinaryFormatter bf = new BinaryFormatter();
 		bf.Serialize(file, data);
 		file.Close();
@@ -62,6 +64,7 @@ public class SaveGame : MonoBehaviour {
 		currentScene = data.scene;
 		currentCar = data.car;
 		currentDifficulty = data.difficulty;
+		currentLevel = data.level;
 
 		SceneManager.LoadScene (currentScene);
 
