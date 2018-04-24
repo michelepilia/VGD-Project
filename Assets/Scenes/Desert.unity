@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39806977, g: 0.37276202, b: 0.29058236, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8274,15 +8274,15 @@ RectTransform:
   m_GameObject: {fileID: 460768223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2}
   m_Children:
   - {fileID: 1525350042}
   m_Father: {fileID: 1283320988}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460768225
@@ -12777,8 +12777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 124.490005, y: -52.78}
-  m_SizeDelta: {x: 248.98, y: 106.56}
+  m_AnchoredPosition: {x: 79.2, y: -52.78}
+  m_SizeDelta: {x: 158.5, y: 106.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733664578
 MonoBehaviour:
@@ -14278,6 +14278,10 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
   m_PrefabInternal: {fileID: 447176766}
+--- !u!4 &794225131 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 447176766}
 --- !u!114 &794225136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14290,9 +14294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NorthDirection: {x: 0, y: 0, z: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 794225131}
   MissionDirection: {x: 0, y: 0, z: 0, w: 0}
-  MissionLayer: {fileID: 0}
+  MissionLayer: {fileID: 765257159}
   missionplace: {fileID: 0}
 --- !u!1 &800802298
 GameObject:
@@ -17167,6 +17171,10 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
   m_PrefabInternal: {fileID: 1112861454}
+--- !u!4 &1010146462 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1112861454}
 --- !u!114 &1010146467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17179,9 +17187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NorthDirection: {x: 0, y: 0, z: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 1010146462}
   MissionDirection: {x: 0, y: 0, z: 0, w: 0}
-  MissionLayer: {fileID: 0}
+  MissionLayer: {fileID: 765257159}
   missionplace: {fileID: 0}
 --- !u!1 &1020175189
 GameObject:
@@ -20149,7 +20157,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1207141751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1537, y: 43.517532, z: 124.81448}
+  m_LocalPosition: {x: 840.9824, y: -378.44263, z: -1722.8801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23590,7 +23598,7 @@ GameObject:
   - component: {fileID: 1498526579}
   - component: {fileID: 1498526578}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Mitsubishi
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27826,6 +27834,10 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
   m_PrefabInternal: {fileID: 791629017}
+--- !u!4 &1755197002 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 791629017}
 --- !u!114 &1755197007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27838,9 +27850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NorthDirection: {x: 0, y: 0, z: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 1755197002}
   MissionDirection: {x: 0, y: 0, z: 0, w: 0}
-  MissionLayer: {fileID: 0}
+  MissionLayer: {fileID: 765257159}
   missionplace: {fileID: 0}
 --- !u!1 &1758451266
 GameObject:
@@ -28211,6 +28223,10 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
   m_PrefabInternal: {fileID: 318242050}
+--- !u!4 &1784066147 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 318242050}
 --- !u!114 &1784066152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28223,9 +28239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NorthDirection: {x: 0, y: 0, z: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 1784066147}
   MissionDirection: {x: 0, y: 0, z: 0, w: 0}
-  MissionLayer: {fileID: 0}
+  MissionLayer: {fileID: 765257159}
   missionplace: {fileID: 0}
 --- !u!1 &1788807829
 GameObject:
@@ -30080,6 +30096,30 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
   m_PrefabInternal: {fileID: 1899914754}
+--- !u!1 &1899984560 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1929332075}
+--- !u!4 &1899984561 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1929332075}
+--- !u!114 &1899984566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899984560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 1899984561}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 765257159}
+  missionplace: {fileID: 0}
 --- !u!1 &1900281727
 GameObject:
   m_ObjectHideFlags: 0
