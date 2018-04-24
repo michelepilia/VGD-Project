@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ActivateCar : MonoBehaviour {
 
+	public Rigidbody rb;
+	public float timePause = 1.4f;
+
 	public GameObject FiatPunto;
 	public GameObject FordFocus;
 	public GameObject FordFocusSporca;
@@ -14,11 +17,17 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject Peugeot206;
 	public ArrayList arrayCars = new ArrayList();
 	string activateCar;
+	public int level;
+	bool reposition;
 
 	//public GameObject car = new GameObject();
 
 	// Use this for initialization
 	void Start () {
+
+		reposition = false;
+
+		level = PlayerPrefs.GetInt ("level");
 
 		arrayCars.Add (FiatPunto);
 		arrayCars.Add (FordFocus);
@@ -33,6 +42,7 @@ public class ActivateCar : MonoBehaviour {
 
 		activateCar = PlayerPrefs.GetString("selectedCar");
 		AudioListener.pause = false;
+
 	}
 
 	// Update is called once per frame
@@ -46,5 +56,23 @@ public class ActivateCar : MonoBehaviour {
 
 		}
 
+		switch (level) {
+		case 3:
+			if(reposition == false){
+				reposition = true;
+				StartCoroutine ("Reposition");
+			}
+			break;
+		}
+
+	}
+
+
+
+	IEnumerator Reposition() {
+		rb.velocity = new  Vector3(0, 0, 0);
+		yield return new WaitForSeconds (timePause);
+		transform.position = new Vector3(3568.922f, 3.2f, 1612.259f); //1537, 0, 348
+		transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
 	}
 }

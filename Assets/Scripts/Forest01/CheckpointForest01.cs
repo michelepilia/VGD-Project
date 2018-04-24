@@ -31,6 +31,8 @@ public class CheckpointForest01 : MonoBehaviour {
 
 		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
 
+		Checkpoint01.tag = "active_checkpoint";
+
 		Checkpoint02.enabled = false;
 		Checkpoint03.enabled = false;
 		Checkpoint04.enabled = false;
@@ -53,6 +55,8 @@ public class CheckpointForest01 : MonoBehaviour {
 		switch (collider.gameObject.name) {
 		case "Checkpoint01":
 			if (checkTimeBonus01 == true) {
+				Checkpoint01.tag = "Untagged";
+				Checkpoint02.tag = "active_checkpoint";
 				Checkpoint01.enabled = false;
 				Checkpoint02.enabled = true;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
@@ -64,6 +68,8 @@ public class CheckpointForest01 : MonoBehaviour {
 			break;
 		case "Checkpoint02":
 			if (checkTimeBonus02 == true) {
+				Checkpoint02.tag = "Untagged";
+				Checkpoint03.tag = "active_checkpoint";
 				Checkpoint02.enabled = false;
 				Checkpoint03.enabled = true;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
@@ -75,6 +81,8 @@ public class CheckpointForest01 : MonoBehaviour {
 			break;
 		case "Checkpoint03":
 			if (checkTimeBonus03 == true) {
+				Checkpoint03.tag = "Untagged";
+				Checkpoint04.tag = "active_checkpoint";
 				Checkpoint03.enabled = false;
 				Checkpoint04.enabled = true;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
@@ -86,6 +94,8 @@ public class CheckpointForest01 : MonoBehaviour {
 			break;
 		case "Checkpoint04":
 			if (checkTimeBonus04 == true) {
+				Checkpoint04.tag = "Untagged";
+				Checkpoint05.tag = "active_checkpoint";
 				Checkpoint04.enabled = false;
 				Checkpoint05.enabled = true;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
@@ -97,6 +107,8 @@ public class CheckpointForest01 : MonoBehaviour {
 			break;
 		case "Checkpoint05":
 			if (checkTimeBonus05 == true) {
+				Checkpoint05.tag = "Untagged";
+				Checkpoint06.tag = "active_checkpoint";
 				Checkpoint05.enabled = false;
 				Checkpoint06.enabled = true;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");

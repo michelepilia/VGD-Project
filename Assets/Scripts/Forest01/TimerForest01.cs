@@ -23,11 +23,11 @@ public class TimerForest01 : MonoBehaviour {
 
 		if(difficulty.Equals("easy"))
 		{
-			timeLeft = 300;
+			timeLeft = 420;
 		}
 		else
 		{
-			timeLeft = 210;
+			timeLeft = 300;
 		}
 
 		//parte il countdown

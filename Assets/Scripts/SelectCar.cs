@@ -42,6 +42,12 @@ public class SelectCar : MonoBehaviour {
 			arrayCars.Add (Peugeot206);
 			arrayCars.Add (Pickup);
 			break;
+		case 3:
+			arrayCars.Add (FiatPunto);
+			arrayCars.Add (Peugeot206);
+			arrayCars.Add (Pickup);
+			arrayCars.Add (FordFocusSporca);
+			break;
 		}
 
 		for (int i = 0; i < arrayCars.Count; i++) {
@@ -133,6 +139,9 @@ public class SelectCar : MonoBehaviour {
 			SceneManager.LoadScene ("Desert");
 			break;
 		case 2:
+			SceneManager.LoadScene ("Forest");
+			break;
+		case 3:
 			SceneManager.LoadScene ("Forest");
 			break;
 		}
