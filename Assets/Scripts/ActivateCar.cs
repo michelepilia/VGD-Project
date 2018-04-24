@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ActivateCar : MonoBehaviour {
 
-	public Rigidbody rb;
+	//public Rigidbody rb;
 	public float timePause = 1.4f;
 
 	public GameObject FiatPunto;
@@ -15,6 +15,7 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject Pickup;
 	public GameObject MitsubishiRally;
 	public GameObject Peugeot206;
+	public GameObject carInGame;
 	public ArrayList arrayCars = new ArrayList();
 	string activateCar;
 	public int level;
@@ -37,7 +38,7 @@ public class ActivateCar : MonoBehaviour {
 		arrayCars.Add (Peugeot206);
 
 		for (int i = 0; i < arrayCars.Count; i++) {
-				((GameObject)arrayCars [i]).SetActive (false);
+			((GameObject)arrayCars [i]).SetActive (false);
 		}
 
 		activateCar = PlayerPrefs.GetString("selectedCar");
@@ -51,6 +52,7 @@ public class ActivateCar : MonoBehaviour {
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (((GameObject)arrayCars [i]).name.ToString ().Equals (activateCar)) {
 				((GameObject)arrayCars [i]).SetActive (true);
+				carInGame = ((GameObject)arrayCars [i]);
 				break;
 			}
 
@@ -60,7 +62,7 @@ public class ActivateCar : MonoBehaviour {
 		case 3:
 			if(reposition == false){
 				reposition = true;
-				StartCoroutine ("Reposition");
+				RepositionForest02 ();
 			}
 			break;
 		}
@@ -69,10 +71,11 @@ public class ActivateCar : MonoBehaviour {
 
 
 
-	IEnumerator Reposition() {
-		rb.velocity = new  Vector3(0, 0, 0);
-		yield return new WaitForSeconds (timePause);
-		transform.position = new Vector3(3568.922f, 3.2f, 1612.259f); //1537, 0, 348
-		transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
+	void RepositionForest02() {
+		//rb.velocity = new  Vector3(0, 0, 0);
+		//yield return new WaitForSeconds (timePause);
+		carInGame.transform.position = new Vector3(3568.922f, 3.2f, 1612.259f); //1537, 0, 348
+		carInGame.transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
+		Debug.Log ("riposizionato");
 	}
 }

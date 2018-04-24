@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4454,7 +4454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20ecf4ba02cd154284a0475fd82f49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   timePause: 1.4
   FiatPunto: {fileID: 802573753}
   FordFocus: {fileID: 21173367}
@@ -4462,6 +4461,7 @@ MonoBehaviour:
   Pickup: {fileID: 871524961}
   MitsubishiRally: {fileID: 477889849}
   Peugeot206: {fileID: 486911230}
+  carInGame: {fileID: 0}
   level: 0
 --- !u!114 &143614763
 MonoBehaviour:
@@ -8881,6 +8881,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e62d60f4352419f42b47144832de4495, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &319709873 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 755021603}
+--- !u!4 &319709874 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 755021603}
+--- !u!114 &319709879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 319709873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 319709874}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 1825753586}
+  missionplace: {fileID: 0}
 --- !u!1 &328652892
 GameObject:
   m_ObjectHideFlags: 0
@@ -9747,6 +9771,30 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 373440035}
+--- !u!1 &376461408 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1720029108}
+--- !u!4 &376461409 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1720029108}
+--- !u!114 &376461414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376461408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 376461409}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 1825753586}
+  missionplace: {fileID: 0}
 --- !u!1001 &377958067
 Prefab:
   m_ObjectHideFlags: 0
@@ -13018,7 +13066,7 @@ GameObject:
   - component: {fileID: 502135739}
   - component: {fileID: 502135738}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Dirty
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17660,7 +17708,7 @@ GameObject:
   - component: {fileID: 690728321}
   - component: {fileID: 690728320}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Focus
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22649,7 +22697,7 @@ GameObject:
   - component: {fileID: 870612033}
   - component: {fileID: 870612032}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Mitsubishi
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25877,6 +25925,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c076a1a077b8b04aaa5c16a2af6d4fe, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1035074470 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 2111428384}
+--- !u!4 &1035074471 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 2111428384}
+--- !u!114 &1035074476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1035074470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 1035074471}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 1825753586}
+  missionplace: {fileID: 0}
 --- !u!1 &1053579827
 GameObject:
   m_ObjectHideFlags: 0
@@ -28786,7 +28858,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Name
@@ -37052,7 +37124,7 @@ GameObject:
   - component: {fileID: 1505154415}
   - component: {fileID: 1505154414}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera Pickup
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46952,6 +47024,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d4cffe5f1249a046b3bc42bbd99dc47, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1862435201 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 660346973}
+--- !u!4 &1862435202 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 660346973}
+--- !u!114 &1862435207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862435201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 1862435202}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 1825753586}
+  missionplace: {fileID: 0}
 --- !u!4 &1863007682 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400056, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -47029,6 +47125,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863449360}
   m_Mesh: {fileID: 4300050, guid: d5042d908c59d234ebb0ea1a028a0b69, type: 3}
+--- !u!1 &1863693008 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 173558, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1913048159}
+--- !u!4 &1863693009 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 448646, guid: 1a9dca02feba5a740a65aa80ccaa457e, type: 2}
+  m_PrefabInternal: {fileID: 1913048159}
+--- !u!114 &1863693014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863693008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db35027ef7e417783e674645f34c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDirection: {x: 0, y: 0, z: 0}
+  Player: {fileID: 1863693009}
+  MissionDirection: {x: 0, y: 0, z: 0, w: 0}
+  MissionLayer: {fileID: 1825753586}
+  missionplace: {fileID: 0}
 --- !u!1001 &1865052942
 Prefab:
   m_ObjectHideFlags: 0
@@ -47194,6 +47314,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1873205932}
   m_Mesh: {fileID: 4300342, guid: d5042d908c59d234ebb0ea1a028a0b69, type: 3}
+--- !u!1 &1874656189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1874656192}
+  - component: {fileID: 1874656191}
+  - component: {fileID: 1874656190}
+  m_Layer: 0
+  m_Name: Water4Simple (1)ReflectionPreview Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!45 &1874656190
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874656189}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
+--- !u!20 &1874656191
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874656189}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967279
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1874656192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874656189}
+  m_LocalRotation: {x: 0, y: 0.490052, z: 0, w: 0.87169325}
+  m_LocalPosition: {x: 538.003, y: 7.658, z: 236.07788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 407
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1882399391
 GameObject:
   m_ObjectHideFlags: 0
@@ -47207,7 +47401,7 @@ GameObject:
   - component: {fileID: 1882399394}
   - component: {fileID: 1882399393}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera 206
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49452,6 +49646,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1981186755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1981186758}
+  - component: {fileID: 1981186757}
+  - component: {fileID: 1981186756}
+  m_Layer: 0
+  m_Name: Water4SimpleReflectionPreview Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!45 &1981186756
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981186755}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
+--- !u!20 &1981186757
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981186755}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967279
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1981186758
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981186755}
+  m_LocalRotation: {x: 0, y: 0.490052, z: 0, w: 0.87169325}
+  m_LocalPosition: {x: 538.003, y: 7.658, z: 236.07788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 406
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1982507949
 Prefab:
   m_ObjectHideFlags: 0
