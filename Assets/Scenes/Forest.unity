@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4472,12 +4472,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20ecf4ba02cd154284a0475fd82f49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  timePause: 1.4
   FiatPunto: {fileID: 802573753}
   FordFocus: {fileID: 21173367}
   FordFocusSporca: {fileID: 723047944}
   Pickup: {fileID: 871524961}
   MitsubishiRally: {fileID: 477889849}
   Peugeot206: {fileID: 486911230}
+  level: 0
 --- !u!114 &143614763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27022,8 +27025,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154287696}
-  m_LocalRotation: {x: 0.087172285, y: 0.89959055, z: 0.21045254, w: -0.37262255}
-  m_LocalPosition: {x: 3776.0388, y: -583.0871, z: 2756.039}
+  m_LocalRotation: {x: -0.17256072, y: 0.09900558, z: 0.017435316, w: 0.9798555}
+  m_LocalPosition: {x: 724.28265, y: -15.034642, z: 481.93622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27447,8 +27450,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1181283907}
-  m_LocalRotation: {x: 0.087172285, y: 0.89959055, z: 0.21045254, w: -0.37262255}
-  m_LocalPosition: {x: 3776.0388, y: -583.0871, z: 2756.039}
+  m_LocalRotation: {x: -0.16974418, y: 0.09170196, z: 0.015865602, w: 0.9810841}
+  m_LocalPosition: {x: 736.2894, y: -15.03464, z: 540.74475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
