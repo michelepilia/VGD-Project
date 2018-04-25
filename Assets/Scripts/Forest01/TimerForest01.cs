@@ -7,27 +7,49 @@ using UnityEngine.SceneManagement;
 public class TimerForest01 : MonoBehaviour {
 
 	public int timeLeft;
-	public int bonusTime = 15;
+	public int bonusTime;
 	public Text CountdownText;
 	public Text BonusTimeText;
 	public GameObject GameOverMenu;
 	public GameObject CompletedLevelMenu;
-	public int totCheckpoints = 6;
-	public int passedCheckpoints = 0;
+	public int totCheckpoints;
+	public int passedCheckpoints;
 	public string difficulty;
+	int level;
 
 	// Use this for initialization
 	void Start () {
 
+		level = PlayerPrefs.GetInt ("level");
 		difficulty = PlayerPrefs.GetString("gameDifficulty");
 
-		if(difficulty.Equals("easy"))
-		{
-			timeLeft = 420;
-		}
-		else
-		{
-			timeLeft = 300;
+		switch (level) {
+		case 2:
+			bonusTime = 15;
+			totCheckpoints = 6;
+			passedCheckpoints = 0;
+
+			if(difficulty.Equals("easy")){
+				timeLeft = 420;
+			}
+			else{
+				timeLeft = 300;
+			}
+			break;
+
+		
+		case 3:
+			bonusTime = 20;
+			totCheckpoints = 3;
+			passedCheckpoints = 0;
+
+			if(difficulty.Equals("easy")){
+				timeLeft = 400;
+			}
+			else{
+				timeLeft = 250;
+			}
+			break;
 		}
 
 		//parte il countdown
@@ -91,7 +113,7 @@ public class TimerForest01 : MonoBehaviour {
 		}
 	}
 
-	public void updateTimeForest01()
+	public void updateTimeForest()
 	{
 		passedCheckpoints++;
 		if (timeLeft >= 0 && passedCheckpoints < totCheckpoints) {

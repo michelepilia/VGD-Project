@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CheckpointForest01 : MonoBehaviour {
 
+	int level;
+
+	//i checkpoints da 1 a 7 riguardano il livello 2 (la prima parte del forest)
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
 	public MeshRenderer Checkpoint03;
@@ -12,32 +15,80 @@ public class CheckpointForest01 : MonoBehaviour {
 	public MeshRenderer Checkpoint05;
 	public MeshRenderer Checkpoint06;
 
+	//i checkpoints da 7 a 9 riguardano il livello 3 (seconda parte del forest)
+	public MeshRenderer Checkpoint07;
+	public MeshRenderer Checkpoint08;
+	public MeshRenderer Checkpoint09;
+
+
 	public int totCheckpoints;
 	public int passedCheckpoints;
 
 	public Text NumberOfCheckpoints;
 
-	public bool checkTimeBonus01 = true;
+	public bool checkTimeBonus01 = false;
 	public bool checkTimeBonus02 = false;
 	public bool checkTimeBonus03 = false;
 	public bool checkTimeBonus04 = false;
 	public bool checkTimeBonus05 = false;
 	public bool checkTimeBonus06 = false;
 
+	public bool checkTimeBonus07 = false;
+	public bool checkTimeBonus08 = false;
+	public bool checkTimeBonus09 = false;
+
+
 	void Start(){
 
-		totCheckpoints = 6;
-		passedCheckpoints = 0;
+		level = PlayerPrefs.GetInt ("level");
 
-		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+		switch (level) {
+		case 2:
+			totCheckpoints = 6;
+			passedCheckpoints = 0;
 
-		Checkpoint01.tag = "active_checkpoint";
+			NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
 
-		Checkpoint02.enabled = false;
-		Checkpoint03.enabled = false;
-		Checkpoint04.enabled = false;
-		Checkpoint05.enabled = false;
-		Checkpoint06.enabled = false;
+			checkTimeBonus01 = true;
+
+			Checkpoint01.enabled = true;
+			Checkpoint02.enabled = false;
+			Checkpoint03.enabled = false;
+			Checkpoint04.enabled = false;
+			Checkpoint05.enabled = false;
+			Checkpoint06.enabled = false;
+			Checkpoint07.enabled = false;
+			Checkpoint08.enabled = false;
+			Checkpoint09.enabled = false;
+
+			Checkpoint01.tag = "active_checkpoint";
+
+			break;
+		case 3:
+			totCheckpoints = 3;
+			passedCheckpoints = 0;
+
+			NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+
+			checkTimeBonus07 = true;
+
+			Checkpoint01.enabled = false;
+			Checkpoint02.enabled = false;
+			Checkpoint03.enabled = false;
+			Checkpoint04.enabled = false;
+			Checkpoint05.enabled = false;
+			Checkpoint06.enabled = false;
+
+			Checkpoint07.enabled = true;
+			Checkpoint08.enabled = false;
+			Checkpoint09.enabled = false;
+
+			Checkpoint07.tag = "active_checkpoint";
+
+			break;
+		}
+
+
 
 	}
 
@@ -59,7 +110,7 @@ public class CheckpointForest01 : MonoBehaviour {
 				Checkpoint02.tag = "active_checkpoint";
 				Checkpoint01.enabled = false;
 				Checkpoint02.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus01 = false;
 				checkTimeBonus02 = true;
 				Debug.Log (collider.gameObject.name);
@@ -72,7 +123,7 @@ public class CheckpointForest01 : MonoBehaviour {
 				Checkpoint03.tag = "active_checkpoint";
 				Checkpoint02.enabled = false;
 				Checkpoint03.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus02 = false;
 				checkTimeBonus03 = true;
 				Debug.Log (collider.gameObject.name);
@@ -85,7 +136,7 @@ public class CheckpointForest01 : MonoBehaviour {
 				Checkpoint04.tag = "active_checkpoint";
 				Checkpoint03.enabled = false;
 				Checkpoint04.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus03 = false;
 				checkTimeBonus04 = true;
 				Debug.Log (collider.gameObject.name);
@@ -98,7 +149,7 @@ public class CheckpointForest01 : MonoBehaviour {
 				Checkpoint05.tag = "active_checkpoint";
 				Checkpoint04.enabled = false;
 				Checkpoint05.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus04 = false;
 				checkTimeBonus05 = true;
 				Debug.Log (collider.gameObject.name);
@@ -111,7 +162,7 @@ public class CheckpointForest01 : MonoBehaviour {
 				Checkpoint06.tag = "active_checkpoint";
 				Checkpoint05.enabled = false;
 				Checkpoint06.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus05 = false;
 				checkTimeBonus06 = true;
 				Debug.Log (collider.gameObject.name);
@@ -121,8 +172,43 @@ public class CheckpointForest01 : MonoBehaviour {
 		case "Checkpoint06":
 			if (checkTimeBonus06 == true) {
 				Checkpoint06.enabled = false;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest01");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus06 = false;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+			}
+			break;
+		case "Checkpoint07":
+			if (checkTimeBonus07 == true) {
+				Checkpoint07.tag = "Untagged";
+				Checkpoint08.tag = "active_checkpoint";
+				Checkpoint07.enabled = false;
+				Checkpoint08.enabled = true;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
+				checkTimeBonus07 = false;
+				checkTimeBonus08 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+			}
+			break;
+		case "Checkpoint08":
+			if (checkTimeBonus08 == true) {
+				Checkpoint08.tag = "Untagged";
+				Checkpoint09.tag = "active_checkpoint";
+				Checkpoint08.enabled = false;
+				Checkpoint09.enabled = true;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
+				checkTimeBonus08 = false;
+				checkTimeBonus09 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+			}
+			break;
+		case "Checkpoint09":
+			if (checkTimeBonus09 == true) {
+				Checkpoint09.enabled = false;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
+				checkTimeBonus09 = false;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
 			}
