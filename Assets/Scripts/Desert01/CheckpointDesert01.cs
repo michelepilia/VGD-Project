@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+
 public class CheckpointDesert01 : MonoBehaviour {
+
+	public Point coordinates;
+	public GameObject carInGame;
+	public Rigidbody rb;
+	//int actualTime;
 
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
@@ -25,7 +31,13 @@ public class CheckpointDesert01 : MonoBehaviour {
 	public bool checkTimeBonus06 = false;
 	public bool checkTimeBonus07 = false;
 
+
+
 	void Start(){
+
+		rb = GetComponent<Rigidbody>();
+		coordinates = new Point ();
+		carInGame = GameObject.FindGameObjectWithTag ("Car");
 
 		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
 
@@ -37,6 +49,10 @@ public class CheckpointDesert01 : MonoBehaviour {
 		Checkpoint05.enabled = false;
 		Checkpoint06.enabled = false;
 		Checkpoint07.enabled = false;
+
+		coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+		coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+		coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 
 	}
 
@@ -63,6 +79,12 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus02 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+				//actualTime = PlayerPrefs.GetInt ("actualTime");
+
+				//Debug.Log (coordinates.GetX () + " " + coordinates.GetY () + " " + coordinates.GetZ ());
 			}
 				break;
 		case "Checkpoint02":
@@ -76,6 +98,9 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus03 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 				break;
 			case "Checkpoint03":
@@ -89,6 +114,9 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus04 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 				break;
 			case "Checkpoint04":
@@ -102,6 +130,9 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus05 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 				break;
 			case "Checkpoint05":
@@ -115,6 +146,9 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus06 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 				break;
 			case "Checkpoint06":
@@ -128,6 +162,9 @@ public class CheckpointDesert01 : MonoBehaviour {
 				checkTimeBonus07 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 				break;
 			case "Checkpoint07":
@@ -140,6 +177,14 @@ public class CheckpointDesert01 : MonoBehaviour {
 			}
 				break;
 		}
+	}
+
+	void RepositionDesertCheckpoint() {
+		rb.velocity = new  Vector3(0, 0, 0);
+		carInGame.transform.position = new Vector3(coordinates.GetX(), coordinates.GetY(), coordinates.GetZ()); //1537, 0, 348
+		carInGame.SendMessage("updateTimeByReposition");
+		//carInGame.transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
+		Debug.Log ("riposizionato");
 	}
 		
 }

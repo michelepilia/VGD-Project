@@ -17,11 +17,13 @@ public class TimerDesert01 : MonoBehaviour {
 	public int totCheckpoints = 7;
 	public int passedCheckpoints = 0;
 	public string difficulty;
+	int actualTime;
 
 	// Use this for initialization
 	void Start () {
 
 		difficulty = PlayerPrefs.GetString("gameDifficulty");
+		actualTime = timeLeft;
 
 		if(difficulty.Equals("easy"))
 		{
@@ -98,9 +100,16 @@ public class TimerDesert01 : MonoBehaviour {
 		passedCheckpoints++;
 		if (timeLeft >= 0 && passedCheckpoints < totCheckpoints) {
 			timeLeft += bonusTime;
+			actualTime = timeLeft;
+			//PlayerPrefs.SetInt ("actualTime", actualTime);
 			BonusTimeText.text = "+" + bonusTime + " sec";
 			StartCoroutine ("AddTime");
 		}
+	}
+
+	public void updateTimeByReposition()
+	{
+		timeLeft = actualTime;
 	}
 
 	IEnumerator AddTime()
