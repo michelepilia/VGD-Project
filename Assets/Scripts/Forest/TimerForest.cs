@@ -16,6 +16,7 @@ public class TimerForest : MonoBehaviour {
 	public int passedCheckpoints;
 	public string difficulty;
 	int level;
+	int actualTime;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,8 @@ public class TimerForest : MonoBehaviour {
 			else{
 				timeLeft = 300;
 			}
+
+			actualTime = timeLeft;
 			break;
 
 		
@@ -49,6 +52,8 @@ public class TimerForest : MonoBehaviour {
 			else{
 				timeLeft = 250;
 			}
+
+			actualTime = timeLeft;
 			break;
 		}
 
@@ -118,9 +123,15 @@ public class TimerForest : MonoBehaviour {
 		passedCheckpoints++;
 		if (timeLeft >= 0 && passedCheckpoints < totCheckpoints) {
 			timeLeft += bonusTime;
+			actualTime = timeLeft;
 			BonusTimeText.text = "+" + bonusTime + " sec";
 			StartCoroutine ("AddTime");
 		}
+	}
+
+	public void updateTimeByRepositionForest()
+	{
+		timeLeft = actualTime;
 	}
 
 	IEnumerator AddTime()

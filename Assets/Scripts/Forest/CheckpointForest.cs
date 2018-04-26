@@ -7,6 +7,10 @@ public class CheckpointForest : MonoBehaviour {
 
 	int level;
 
+	public Point coordinates;
+	public GameObject carInGame;
+	public Rigidbody rb;
+
 	//i checkpoints da 1 a 7 riguardano il livello 2 (la prima parte del forest)
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
@@ -42,6 +46,10 @@ public class CheckpointForest : MonoBehaviour {
 
 		level = PlayerPrefs.GetInt ("level");
 
+		rb = GetComponent<Rigidbody>();
+		coordinates = new Point ();
+		carInGame = GameObject.FindGameObjectWithTag ("Car");
+
 		switch (level) {
 		case 2:
 			totCheckpoints = 6;
@@ -62,6 +70,10 @@ public class CheckpointForest : MonoBehaviour {
 			Checkpoint09.enabled = false;
 
 			Checkpoint01.tag = "active_checkpoint";
+
+			coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+			coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+			coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 
 			break;
 		case 3:
@@ -84,6 +96,10 @@ public class CheckpointForest : MonoBehaviour {
 			Checkpoint09.enabled = false;
 
 			Checkpoint07.tag = "active_checkpoint";
+
+			coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+			coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+			coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 
 			break;
 		}
@@ -115,6 +131,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus02 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint02":
@@ -128,6 +147,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus03 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint03":
@@ -141,6 +163,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus04 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint04":
@@ -154,6 +179,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus05 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint05":
@@ -167,6 +195,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus06 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint06":
@@ -189,6 +220,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus08 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint08":
@@ -202,6 +236,9 @@ public class CheckpointForest : MonoBehaviour {
 				checkTimeBonus09 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 			}
 			break;
 		case "Checkpoint09":
@@ -214,5 +251,14 @@ public class CheckpointForest : MonoBehaviour {
 			}
 			break;
 		}
+	}
+
+
+	void RepositionForestCheckpoint() {
+		rb.velocity = new  Vector3(0, 0, 0);
+		carInGame.transform.position = new Vector3(coordinates.GetX(), coordinates.GetY(), coordinates.GetZ()); //1537, 0, 348
+		carInGame.SendMessage("updateTimeByRepositionForest");
+		//carInGame.transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
+		Debug.Log ("riposizionato");
 	}
 }

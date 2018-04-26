@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToTheLastCheckpoint : MonoBehaviour {
 
+	string currentScene;
+
 	// Use this for initialization
 	void Start () {
+
+		currentScene = SceneManager.GetActiveScene ().name.ToString ();
 		
 	}
 	
@@ -14,7 +19,14 @@ public class ToTheLastCheckpoint : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			GameObject.FindGameObjectWithTag("Car").SendMessage("RepositionDesertCheckpoint");
+			switch (currentScene) {
+			case "Desert":
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesertCheckpoint");
+				break;
+			case "Forest":
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionForestCheckpoint");
+				break;
+			}
 		}
 		
 	}

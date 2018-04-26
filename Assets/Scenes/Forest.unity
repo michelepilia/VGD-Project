@@ -651,6 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -672,6 +674,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &21173371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 21173367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &21173375 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -4444,7 +4457,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 143614760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e42bcdc2d0b3a243818066a56666c63, type: 3}
   m_Name: 
@@ -12416,6 +12429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -12437,6 +12452,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &477889853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477889849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &477889857 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -12564,6 +12590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -12585,6 +12613,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &486911234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 486911230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &486911238 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -15467,6 +15506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -18230,6 +18271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -18251,6 +18294,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &723047948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723047944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &723047952 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -20892,6 +20946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -20913,6 +20969,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &802573757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 802573753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &802573761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -22905,6 +22972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
@@ -22926,6 +22995,17 @@ MonoBehaviour:
   checkTimeBonus07: 0
   checkTimeBonus08: 0
   checkTimeBonus09: 0
+--- !u!114 &871524965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 871524961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc727a6a4b3faaa4e947684df27e7100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &871524969 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -40825,6 +40905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14666ddd7bd546879da453e4f4610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 197298092}
   Checkpoint02: {fileID: 1275211378}
   Checkpoint03: {fileID: 109111861}
