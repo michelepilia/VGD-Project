@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Classe creata per memorizzare le coordinate della macchina quando supera i vari checkpoint
 public class Point{
 	private float x;
 	private float y;

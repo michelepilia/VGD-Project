@@ -10,11 +10,13 @@ public class SaveGame : MonoBehaviour {
 	string currentScene;
 	string currentCar;
 	string currentDifficulty;
-	string modGame; //serve a capire se si è avviata una nuova partita e se quindisi deve salvare
+	string modGame; //serve a capire se si è avviata una nuova partita e se quindi si deve salvare. serve ad evitare un loop infinito di salvataggi
 	int currentLevel;
 
 	void Start()
 	{
+		/*Le prossime 4 variabili corrispondono ai dati di gioco che si vogliono salvare. La quinta è una variabile
+		  che serve a capire se si è già salvato o se si deve salvare la partita*/
 		currentScene = SceneManager.GetActiveScene ().name.ToString ();
 		currentCar = PlayerPrefs.GetString("selectedCar");
 		currentDifficulty = PlayerPrefs.GetString("gameDifficulty");
@@ -31,6 +33,7 @@ public class SaveGame : MonoBehaviour {
 		}
 	}
 
+	//metodo di salvataggio su file
 	public void SaveFile()
 	{
 		string destination = Application.persistentDataPath + "/save.dat";
@@ -39,13 +42,14 @@ public class SaveGame : MonoBehaviour {
 		if(File.Exists(destination)) file = File.OpenWrite(destination);
 		else file = File.Create(destination);
 
+		//GameData è una classe da noi creata che serve a contenere i dati di gioco da salvare e da caricare
 		GameData data = new GameData(currentScene, currentCar, currentDifficulty, currentLevel);
 		BinaryFormatter bf = new BinaryFormatter();
 		bf.Serialize(file, data);
 		file.Close();
 	}
 
-	public void LoadFile()
+	/*public void LoadFile()
 	{
 		string destination = Application.persistentDataPath + "/save.dat";
 		FileStream file;
@@ -68,9 +72,6 @@ public class SaveGame : MonoBehaviour {
 
 		SceneManager.LoadScene (currentScene);
 
-		/*Debug.Log(data.scene);
-		Debug.Log(data.car);
-		Debug.Log(data.difficulty);*/
-	}
+	}*/
 
 }

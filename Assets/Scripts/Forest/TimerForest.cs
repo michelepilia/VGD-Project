@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//script molto simile a quello del Timer del desert, con la differenza che il forest gestisce 3 livelli
 public class TimerForest : MonoBehaviour {
 
 	public int timeLeft;

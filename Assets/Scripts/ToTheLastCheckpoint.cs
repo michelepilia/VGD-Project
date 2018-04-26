@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//script che riposiziona la macchina del giocatore alla posizione dell'ultimo checkpoint superato
 public class ToTheLastCheckpoint : MonoBehaviour {
 
 	string currentScene;

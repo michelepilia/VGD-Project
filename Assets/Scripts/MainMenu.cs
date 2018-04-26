@@ -11,9 +11,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class MainMenu : MonoBehaviour {
 
+	//si utilizzano 2 canvas: una per il menu principale, una per scegliere la difficoltà quando si preme su Nuova Partita
 	public GameObject canvasMenuPrincipale;
 	public GameObject canvasDifficolta;
+
 	string modGame;
+
+	//queste variabili vengono utilizzate nel caso si prema su Carica Partita
 	string currentScene;
 	string currentCar;
 	string currentDifficulty;
@@ -33,10 +37,10 @@ public class MainMenu : MonoBehaviour {
 	}
 
 
-
+	//i prossimi metodi corrispondono alle funzioni dei bottoni cliccabili nel menu principale
 	public void NewGame()
 	{
-		modGame = "newGame";
+		modGame = "newGame";//ogni volta che questa variabile sarà impostata a "newGame" la partita verrà salvata
 		level = 1;
 		canvasMenuPrincipale.SetActive(false);
 		canvasDifficolta.SetActive (true);
@@ -62,6 +66,7 @@ public class MainMenu : MonoBehaviour {
 		GameData data = (GameData) bf.Deserialize(file);
 		file.Close();
 
+		//ci si recupera i dati dall'ultimo salvataggio e, attraverso il PlayerPrefs, li si settano per poter essere utilizzati nella scena successiva
 		currentScene = data.scene;
 		currentCar = data.car;
 		currentDifficulty = data.difficulty;

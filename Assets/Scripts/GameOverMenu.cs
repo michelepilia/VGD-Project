@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//script che viene lanciato quando non si riesce a completare il livello entro il tempo a disposizione
 public class GameOverMenu : MonoBehaviour {
 	
 	// Use this for initialization

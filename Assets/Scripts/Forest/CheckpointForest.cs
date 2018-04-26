@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+/*Questo script è basato su quello utilizzato per gestire i checkpoint del Desert. E' leggermente più complesso in quanto nel Forest vengono gestiti 3 diversi livelli*/
+
 public class CheckpointForest : MonoBehaviour {
 
 	int level;
@@ -44,7 +46,7 @@ public class CheckpointForest : MonoBehaviour {
 
 	void Start(){
 
-		level = PlayerPrefs.GetInt ("level");
+		level = PlayerPrefs.GetInt ("level");//attraverso il PlayerPrefs ci si recupera il livello che si vuole gestire
 
 		rb = GetComponent<Rigidbody>();
 		coordinates = new Point ();

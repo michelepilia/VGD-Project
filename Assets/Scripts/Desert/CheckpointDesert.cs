@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class CheckpointDesert : MonoBehaviour {
 
-	public Point coordinates;
+	public Point coordinates; //variabile di tipo Point, classe creata per poter acquisire le coordinate della macchina
 	public GameObject carInGame;
 	public Rigidbody rb;
 	//int actualTime;
 
+	//si richiamano le Mesh dei checkpoint per poterli gestire da script
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
 	public MeshRenderer Checkpoint03;
@@ -21,8 +22,9 @@ public class CheckpointDesert : MonoBehaviour {
 	public int totCheckpoints = 7;
 	public int passedCheckpoints = 0;
 
-	public Text NumberOfCheckpoints;
+	public Text NumberOfCheckpoints; //utilizzato per mostrare nell'interfaccia di gioco i checkpoint superati
 
+	//i checkTimeBonus servono per attivare i bonus in secondi a ogni chekpoint superato
 	public bool checkTimeBonus01 = true;
 	public bool checkTimeBonus02 = false;
 	public bool checkTimeBonus03 = false;
@@ -41,8 +43,9 @@ public class CheckpointDesert : MonoBehaviour {
 
 		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
 
-		Checkpoint01.tag = "active_checkpoint";
+		Checkpoint01.tag = "active_checkpoint";//utilizzato per dare un riferimento alla bussola per puntare il prossimo checkpoint
 
+		//all'avvio, tutti i checkpoint eccetto il primo vengono disattivati
 		Checkpoint02.enabled = false;
 		Checkpoint03.enabled = false;
 		Checkpoint04.enabled = false;
@@ -50,6 +53,7 @@ public class CheckpointDesert : MonoBehaviour {
 		Checkpoint06.enabled = false;
 		Checkpoint07.enabled = false;
 
+		//all'avvio vengono salvate le coordinate iniziali della macchina per poter essere riposizionata "manualmente" dal giocatore
 		coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
 		coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
 		coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
@@ -60,11 +64,13 @@ public class CheckpointDesert : MonoBehaviour {
 
 		NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
 
+		//al raggiungimento dell'ultimo checkpoint, il numero di questi ultimi verrà mostrato nell'interfaccia di gioco di colore verde
 		if(passedCheckpoints == totCheckpoints){
 			NumberOfCheckpoints.color = Color.green;
 		}
 	}
 
+	//dentro questo metodo avviene la gestione dei checkpoint: appena uno viene colpito si disattiva e viene subito attivato il successivo
 	private void OnTriggerEnter(Collider collider)
 	{
 		switch (collider.gameObject.name) {
@@ -74,12 +80,12 @@ public class CheckpointDesert : MonoBehaviour {
 				Checkpoint02.tag = "active_checkpoint";
 				Checkpoint01.enabled = false;
 				Checkpoint02.enabled = true;
-				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTime");//questo script "comunica" con quello del timer, lanciando il metodo del timer "updateTime" che aggiunge i secondi bonus ottenuti dal checkpoint
 				checkTimeBonus01 = false;
 				checkTimeBonus02 = true;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
-				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);//a ogni chekpoint vengono memorizzate le coordinate attuali della macchina
 				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
 				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
 				//actualTime = PlayerPrefs.GetInt ("actualTime");
@@ -179,6 +185,10 @@ public class CheckpointDesert : MonoBehaviour {
 		}
 	}
 
+	/*questo metodo viene lanciato dallo script "ToTheLastCheckpoint", non appena il giocatore preme la barra spaziatrice:
+	  la velocità della macchina viene riportata a 0, e la macchina viene riposizionata alle coordinate dell'ultimo checkpoint.
+	  Inoltre, viene lanciato un metodo dello script del timer "updateTimeByReposition", che tiporta il tempo a disposizione a quello
+	  che era al momento del superamento del precedente checkpoint*/
 	void RepositionDesertCheckpoint() {
 		rb.velocity = new  Vector3(0, 0, 0);
 		carInGame.transform.position = new Vector3(coordinates.GetX(), coordinates.GetY(), coordinates.GetZ()); //1537, 0, 348

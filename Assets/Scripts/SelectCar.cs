@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//script che gestisce la selezione delle auto nella scena che viene lanciata prima di ogni livello: SelectCar
 public class SelectCar : MonoBehaviour {
 
 	public GameObject FiatPunto;
@@ -13,25 +14,18 @@ public class SelectCar : MonoBehaviour {
 	public GameObject MitsubishiRally;
 	public GameObject Peugeot206;
 	public Text CarName;
-	//public int nCar;
 	public string selectedCar;
 	public int level;
-	//public int click = 0;
 
+	//anche in questo script, le auto vengono gestite attraverso un ArrayList
 	public ArrayList arrayCars = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
 		AudioListener.pause = false;
-		//nCar = 6;
 		level = PlayerPrefs.GetInt ("level");
-		/*arrayCars.Add (FiatPunto);
-		arrayCars.Add (FordFocus);
-		arrayCars.Add (FordFocusSporca);
-		arrayCars.Add (Pickup);
-		arrayCars.Add (MitsubishiRally);
-		arrayCars.Add (Peugeot206);*/
 
+		//al completamento di ogni livello vengono sbloccate delle auto. In base al livello a cui si è arrivati, vengono rese disponibili determinate auto
 		switch (level) {
 		case 1:
 			arrayCars.Add (FiatPunto);
@@ -50,6 +44,7 @@ public class SelectCar : MonoBehaviour {
 			break;
 		}
 
+		//attraverso questo for si fa in modo di avere una sola auto abilitata all'avvio della scena
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (i == 0) {
 				((GameObject)arrayCars [i]).SetActive (true);
@@ -64,6 +59,8 @@ public class SelectCar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//questo for serve a visualizzare in modo corretto il nome di ogni auto nell'interfaccia utente
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if(((GameObject)arrayCars [i]).activeSelf)
 			{
@@ -94,8 +91,14 @@ public class SelectCar : MonoBehaviour {
 		
 	}
 
+
+
+
+	/*Nella scena viene mostrata la macchina al centro, 2 bottoni ai suoi lati per scorrere le auto, e un bottone sotto di essa per scegliere di utilizzare
+	  la macchina mostrata*/
 	public void LeftButton()
 	{
+		//questo for non fa altro che disabilitare la macchina mostrata e abilitare la macchina precedente quando il bottone viene premuto
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (((GameObject)arrayCars [i]).activeSelf) {
 				((GameObject)arrayCars [i]).SetActive (false);
@@ -125,15 +128,19 @@ public class SelectCar : MonoBehaviour {
 
 	public void SelectCarButton()
 	{
+		//in questo for ci si salva il nome della macchina attiva al momento in cui si è premuto sul bottone
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if(((GameObject)arrayCars [i]).activeSelf)
 			{
 				selectedCar = ((GameObject)arrayCars [i]).name.ToString ();
 			}
 		}
-		//Awake ();
+
+		//col PlayerPrefs ci si salva il nome della macchina che andrà poi attivata nella scena succesiva
 		PlayerPrefs.SetString("selectedCar", selectedCar);
 
+		/*poichè a quasta scena ci si arriva prima dell'avvio di ogni livello, ci si assicura che, una volta scelta la macchina,
+		  si venga rimandati alla scena giusta*/
 		switch (level) {
 		case 1:
 			SceneManager.LoadScene ("Desert");
@@ -146,10 +153,7 @@ public class SelectCar : MonoBehaviour {
 			break;
 		}
 	}
-
-	/*void Awake () {
-		DontDestroyOnLoad (selectedCar);
-	}*/
+		
 
 
 }

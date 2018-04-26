@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//questo script serve ad attivare la macchina scelta in precedenza nel menu di selezione delle auto
 public class ActivateCar : MonoBehaviour {
 
 	//public Rigidbody rb;
 	public float timePause = 1.4f;
 
+	//si richiamano i GameObject delle auto per poter essere gestiti da script
 	public GameObject FiatPunto;
 	public GameObject FordFocus;
 	public GameObject FordFocusSporca;
@@ -16,9 +18,10 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject MitsubishiRally;
 	public GameObject Peugeot206;
 	public GameObject carInGame;
-	public ArrayList arrayCars = new ArrayList();
+	public ArrayList arrayCars = new ArrayList();//le macchine vengono gestite e mostrate al giocatore attraverso l'utilizzo di un ArrayList
 	string activateCar;
-	public int level;
+	public int level;/*viene incrementato al completamento di ogni livello. Poichè nel forest vengono gestiti 3 livelli, in questo caso va utilizzato
+	per capire se la macchina vi riposizionata all'avvio della scena*/
 	bool reposition;
 
 	//public GameObject car = new GameObject();
@@ -30,6 +33,7 @@ public class ActivateCar : MonoBehaviour {
 
 		level = PlayerPrefs.GetInt ("level");
 
+		//all'avvio del livello, l'array delle auto viene popolato
 		arrayCars.Add (FiatPunto);
 		arrayCars.Add (FordFocus);
 		arrayCars.Add (FordFocusSporca);
@@ -37,11 +41,12 @@ public class ActivateCar : MonoBehaviour {
 		arrayCars.Add (MitsubishiRally);
 		arrayCars.Add (Peugeot206);
 
+		//ci si assicura che all'avvio tutte le auto siano disabilitate
 		for (int i = 0; i < arrayCars.Count; i++) {
 			((GameObject)arrayCars [i]).SetActive (false);
 		}
 
-		activateCar = PlayerPrefs.GetString("selectedCar");
+		activateCar = PlayerPrefs.GetString("selectedCar");//attraverso il PlayerPrefs ci si recupera il nome dell'auto scelta in precedenza
 		AudioListener.pause = false;
 
 	}
@@ -49,6 +54,7 @@ public class ActivateCar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//attraverso un for si scorre l'array delle auto e viene abilitata quella col nome uguale a quello salvato in activateCar
 		for (int i = 0; i < arrayCars.Count; i++) {
 			if (((GameObject)arrayCars [i]).name.ToString ().Equals (activateCar)) {
 				((GameObject)arrayCars [i]).SetActive (true);
@@ -58,6 +64,7 @@ public class ActivateCar : MonoBehaviour {
 
 		}
 
+		//se il livello da eseguire all'avvio della scena è il terzo, la macchina viene riposizionata
 		switch (level) {
 		case 3:
 			if(reposition == false){

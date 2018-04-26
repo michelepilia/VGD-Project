@@ -8,21 +8,21 @@ using UnityEngine.SceneManagement;
 
 public class TimerDesert : MonoBehaviour {
 
-	public int timeLeft;
-	public int bonusTime = 10;
-	public Text CountdownText;
+	public int timeLeft;//tempo a disposizione all'avio del livello
+	public int bonusTime = 10;//i secondi che si acquisiscono al superamento di ogni checkpoint
+	public Text CountdownText;//il timer mostrato nell'interfaccia di gioco
 	public Text BonusTimeText;
-	public GameObject GameOverMenu;
-	public GameObject CompletedLevelMenu;
+	public GameObject GameOverMenu;//il menu che viene lanciato se non si riesce a completare il livello entro il tempo a disposizione
+	public GameObject CompletedLevelMenu;//il menu che si avvia al completamento del livello
 	public int totCheckpoints = 7;
 	public int passedCheckpoints = 0;
 	public string difficulty;
-	int actualTime;
+	int actualTime;//variabile che viene utilizzata per aggiornare il tempo quando si usa il riposizionamento manuale
 
 	// Use this for initialization
 	void Start () {
 
-		difficulty = PlayerPrefs.GetString("gameDifficulty");
+		difficulty = PlayerPrefs.GetString("gameDifficulty");//ci si recupera la difficoltà scelta nel menu principale
 		actualTime = timeLeft;
 
 		if(difficulty.Equals("easy"))
@@ -42,6 +42,9 @@ public class TimerDesert : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		/*Qui viene gestito il timer, dal colore da mostrare in base ai secondi restanti (giallo gli ultimi 59, rosso gli ultimi 9), ai menu da lanciare in caso di compimento
+		  o fallimento della missione*/
 		if ((timeLeft % 60) < 10) {
 			CountdownText.text = ("" + (timeLeft / 60) + ":0" + (timeLeft % 60));
 		} else {
@@ -95,6 +98,7 @@ public class TimerDesert : MonoBehaviour {
 		}
 	}
 
+	//metodo chiamato dallo script dei checkpoint per aggiornare il timer con l'aggiunta dei secondi bonus
 	public void updateTime()
 	{
 		passedCheckpoints++;
@@ -107,6 +111,7 @@ public class TimerDesert : MonoBehaviour {
 		}
 	}
 
+	//chiamato dallo script dei checkpoint quando si usa il riposizionamento, serve a riportare il tempo a quello del momento in cui si è superato l'ultimo checkpoint
 	public void updateTimeByReposition()
 	{
 		timeLeft = actualTime;

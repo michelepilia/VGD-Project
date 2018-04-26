@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//script che viene lanciato al completamento di ogni livello
 public class CompletedLevelMenu : MonoBehaviour {
 
 	public int level;
@@ -11,7 +12,7 @@ public class CompletedLevelMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		level = PlayerPrefs.GetInt ("level");
+		level = PlayerPrefs.GetInt ("level");//ci si recupera il numero del livello, in modo da poter essere aggiornato
 		
 	}
 	
@@ -20,10 +21,12 @@ public class CompletedLevelMenu : MonoBehaviour {
 		
 	}
 
+
+	//i prossimi 4 metodi corrispondono alle funzioni dei bottoni cliccabili nel menu di livello completato
 	public void NextLevel()
 	{
 		level++;
-		modGame = "newGame";
+		modGame = "newGame";//se modGame era impostata a "loadGame", viene reimpostata a "newGame", in modo che all'avvio del prossimo livello, la partita venga salvata
 		PlayerPrefs.SetString ("modGame", modGame);
 		PlayerPrefs.SetInt ("level", level);
 		Time.timeScale = 1f;

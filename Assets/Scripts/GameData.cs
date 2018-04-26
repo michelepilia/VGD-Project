@@ -1,4 +1,5 @@
-﻿[System.Serializable]
+﻿//Classe creata da noi per contenere i dati di gioco da salvare e da caricare
+[System.Serializable]
 public class GameData
 {
 	public string scene;

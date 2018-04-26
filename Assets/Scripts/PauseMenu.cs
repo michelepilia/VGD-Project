@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//menu di pausa, che verrà lanciato ogni qualvolta in gioco si prema esc
 public class PauseMenu : MonoBehaviour {
 
 	public static bool GameIsPaused = false;
