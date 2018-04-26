@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TimerForest01 : MonoBehaviour {
+public class TimerForest : MonoBehaviour {
 
 	public int timeLeft;
 	public int bonusTime;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class CheckpointForest01 : MonoBehaviour {
+public class CheckpointForest : MonoBehaviour {
 
 	int level;
 

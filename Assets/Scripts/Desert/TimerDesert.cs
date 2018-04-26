@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TimerDesert01 : MonoBehaviour {
+public class TimerDesert : MonoBehaviour {
 
 	public int timeLeft;
 	public int bonusTime = 10;

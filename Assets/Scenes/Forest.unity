@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -657,6 +657,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -666,6 +669,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &21173375 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -12416,6 +12422,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -12425,6 +12434,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &477889857 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -12558,6 +12570,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -12567,6 +12582,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &486911238 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -15455,6 +15473,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 0}
+  Checkpoint08: {fileID: 0}
+  Checkpoint09: {fileID: 0}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -15464,6 +15485,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &594260941 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -18212,6 +18236,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -18221,6 +18248,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &723047952 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -20868,6 +20898,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -20877,6 +20910,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &802573761 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -22875,6 +22911,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 504447394}
+  Checkpoint08: {fileID: 1144640340}
+  Checkpoint09: {fileID: 2037078795}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -22884,6 +22923,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!4 &871524969 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -40789,6 +40831,9 @@ MonoBehaviour:
   Checkpoint04: {fileID: 1094619980}
   Checkpoint05: {fileID: 33087470}
   Checkpoint06: {fileID: 141050906}
+  Checkpoint07: {fileID: 0}
+  Checkpoint08: {fileID: 0}
+  Checkpoint09: {fileID: 0}
   totCheckpoints: 0
   passedCheckpoints: 0
   NumberOfCheckpoints: {fileID: 1374833824}
@@ -40798,6 +40843,9 @@ MonoBehaviour:
   checkTimeBonus04: 0
   checkTimeBonus05: 0
   checkTimeBonus06: 0
+  checkTimeBonus07: 0
+  checkTimeBonus08: 0
+  checkTimeBonus09: 0
 --- !u!114 &1638635665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46561,6 +46609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db77fc681b35dd044a5bdb71cb6b402d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carInGame: {fileID: 0}
+  rb: {fileID: 0}
   Checkpoint01: {fileID: 0}
   Checkpoint02: {fileID: 0}
   Checkpoint03: {fileID: 0}

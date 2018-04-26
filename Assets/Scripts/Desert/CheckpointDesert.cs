@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class CheckpointDesert01 : MonoBehaviour {
+public class CheckpointDesert : MonoBehaviour {
 
 	public Point coordinates;
 	public GameObject carInGame;
