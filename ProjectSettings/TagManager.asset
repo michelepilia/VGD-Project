@@ -10,6 +10,7 @@ TagManager:
   - Car
   - active_checkpoint
   - Compass_Canvas
+  - TargetMap
   layers:
   - Default
   - TransparentFX
