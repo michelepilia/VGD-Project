@@ -13,7 +13,7 @@ public class CheckpointForest : MonoBehaviour {
 	public GameObject carInGame;
 	public Rigidbody rb;
 
-	//i checkpoints da 1 a 7 riguardano il livello 2 (la prima parte del forest)
+	//i checkpoints da 1 a 6 riguardano il livello 2 (la prima parte del forest)
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
 	public MeshRenderer Checkpoint03;
@@ -25,6 +25,10 @@ public class CheckpointForest : MonoBehaviour {
 	public MeshRenderer Checkpoint07;
 	public MeshRenderer Checkpoint08;
 	public MeshRenderer Checkpoint09;
+
+	//i checkpoints 10 e 11 riguardano il livello 4 (terza e ultima parte del forest)
+	public MeshRenderer Checkpoint10;
+	public MeshRenderer Checkpoint11;
 
 
 	public int totCheckpoints;
@@ -42,6 +46,9 @@ public class CheckpointForest : MonoBehaviour {
 	public bool checkTimeBonus07 = false;
 	public bool checkTimeBonus08 = false;
 	public bool checkTimeBonus09 = false;
+
+	public bool checkTimeBonus10 = false;
+	public bool checkTimeBonus11 = false;
 
 
 	void Start(){
@@ -67,9 +74,13 @@ public class CheckpointForest : MonoBehaviour {
 			Checkpoint04.enabled = false;
 			Checkpoint05.enabled = false;
 			Checkpoint06.enabled = false;
+
 			Checkpoint07.enabled = false;
 			Checkpoint08.enabled = false;
 			Checkpoint09.enabled = false;
+
+			Checkpoint10.enabled = false;
+			Checkpoint11.enabled = false;
 
 			Checkpoint01.tag = "active_checkpoint";
 
@@ -97,7 +108,39 @@ public class CheckpointForest : MonoBehaviour {
 			Checkpoint08.enabled = false;
 			Checkpoint09.enabled = false;
 
+			Checkpoint10.enabled = false;
+			Checkpoint11.enabled = false;
+
 			Checkpoint07.tag = "active_checkpoint";
+
+			coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+			coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+			coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+
+			break;
+		case 4:
+			totCheckpoints = 2;
+			passedCheckpoints = 0;
+
+			NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+
+			checkTimeBonus10 = true;
+
+			Checkpoint01.enabled = false;
+			Checkpoint02.enabled = false;
+			Checkpoint03.enabled = false;
+			Checkpoint04.enabled = false;
+			Checkpoint05.enabled = false;
+			Checkpoint06.enabled = false;
+
+			Checkpoint07.enabled = false;
+			Checkpoint08.enabled = false;
+			Checkpoint09.enabled = false;
+
+			Checkpoint10.enabled = true;
+			Checkpoint11.enabled = false;
+
+			Checkpoint10.tag = "active_checkpoint";
 
 			coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
 			coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
@@ -248,6 +291,31 @@ public class CheckpointForest : MonoBehaviour {
 				Checkpoint09.enabled = false;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
 				checkTimeBonus09 = false;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+			}
+			break;
+		case "Checkpoint10":
+			if (checkTimeBonus10 == true) {
+				Checkpoint10.tag = "Untagged";
+				Checkpoint11.tag = "active_checkpoint";
+				Checkpoint10.enabled = false;
+				Checkpoint11.enabled = true;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
+				checkTimeBonus10 = false;
+				checkTimeBonus11 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+				coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+			}
+			break;
+		case "Checkpoint11":
+			if (checkTimeBonus11 == true) {
+				Checkpoint11.enabled = false;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeForest");
+				checkTimeBonus11 = false;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
 			}
