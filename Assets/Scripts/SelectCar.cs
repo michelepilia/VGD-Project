@@ -49,6 +49,14 @@ public class SelectCar : MonoBehaviour {
 			arrayCars.Add (FordFocusSporca);
 			arrayCars.Add (FordFocus);
 			break;
+		case 5:
+			arrayCars.Add (FiatPunto);
+			arrayCars.Add (Peugeot206);
+			arrayCars.Add (Pickup);
+			arrayCars.Add (FordFocusSporca);
+			arrayCars.Add (FordFocus);
+			arrayCars.Add (MitsubishiRally);
+			break;
 		}
 
 		//attraverso questo for si fa in modo di avere una sola auto abilitata all'avvio della scena
@@ -160,6 +168,9 @@ public class SelectCar : MonoBehaviour {
 			break;
 		case 4:
 			SceneManager.LoadScene ("Forest");
+			break;
+		case 5:
+			SceneManager.LoadScene ("Desert2");
 			break;
 		}
 	}

@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectCar.unity
     guid: 77bc858ae49a53341bd836ff43b45edf
+  - enabled: 1
+    path: Assets/Scenes/Desert2.unity
+    guid: 25c5e63a76260504faeb20850f1bd3f6

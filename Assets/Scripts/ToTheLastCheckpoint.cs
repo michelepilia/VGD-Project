@@ -27,6 +27,9 @@ public class ToTheLastCheckpoint : MonoBehaviour {
 			case "Forest":
 				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionForestCheckpoint");
 				break;
+			case "Desert2":
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesert2Checkpoint");
+				break;
 			}
 		}
 		
