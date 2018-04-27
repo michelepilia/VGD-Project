@@ -56,6 +56,21 @@ public class TimerForest : MonoBehaviour {
 
 			actualTime = timeLeft;
 			break;
+
+		case 4:
+			bonusTime = 12;
+			totCheckpoints = 2;
+			passedCheckpoints = 0;
+
+			if(difficulty.Equals("easy")){
+				timeLeft = 240;
+			}
+			else{
+				timeLeft = 180;
+			}
+
+			actualTime = timeLeft;
+			break;
 		}
 
 		//parte il countdown

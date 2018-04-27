@@ -72,6 +72,12 @@ public class ActivateCar : MonoBehaviour {
 				RepositionForest02 ();
 			}
 			break;
+		case 4:
+			if(reposition == false){
+				reposition = true;
+				RepositionForest03 ();
+			}
+			break;
 		}
 
 	}
@@ -83,6 +89,12 @@ public class ActivateCar : MonoBehaviour {
 		//yield return new WaitForSeconds (timePause);
 		carInGame.transform.position = new Vector3(3568.922f, 3.2f, 1612.259f); //1537, 0, 348
 		carInGame.transform.rotation = Quaternion.Euler (0.0f, -54.658f, 0.0f);
+		Debug.Log ("riposizionato");
+	}
+
+	void RepositionForest03() {
+		carInGame.transform.position = new Vector3(704.8838f, 5.021035f, 2673.359f); //1537, 0, 348
+		carInGame.transform.rotation = Quaternion.Euler (2.039f, 85.34f, -1.596f);
 		Debug.Log ("riposizionato");
 	}
 }
