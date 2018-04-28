@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour {
 	//si utilizzano 2 canvas: una per il menu principale, una per scegliere la difficoltà quando si preme su Nuova Partita
 	public GameObject canvasMenuPrincipale;
 	public GameObject canvasDifficolta;
+	public GameObject canvasIstruzioni;
 
 	string modGame;
 
@@ -79,6 +80,12 @@ public class MainMenu : MonoBehaviour {
 		PlayerPrefs.SetString ("modGame", modGame);
 		PlayerPrefs.SetInt ("level", level);
 		SceneManager.LoadScene (currentScene);
+	}
+
+	public void Instructions()
+	{
+		canvasMenuPrincipale.SetActive(false);
+		canvasIstruzioni.SetActive (true);
 	}
 
 	public void QuitGame()

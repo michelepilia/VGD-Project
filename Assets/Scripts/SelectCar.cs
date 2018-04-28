@@ -14,6 +14,8 @@ public class SelectCar : MonoBehaviour {
 	public GameObject MitsubishiRally;
 	public GameObject Peugeot206;
 	public Text CarName;
+	public Text NewCarLeft;
+	public Text NewCarRight;
 	public string selectedCar;
 	public int level;
 
@@ -24,6 +26,10 @@ public class SelectCar : MonoBehaviour {
 	void Start () {
 		AudioListener.pause = false;
 		level = PlayerPrefs.GetInt ("level");
+		NewCarLeft.text = "";
+		NewCarRight.text = "";
+		NewCarLeft.color = Color.green;
+		NewCarRight.color = Color.green;
 
 		//al completamento di ogni livello vengono sbloccate delle auto. In base al livello a cui si è arrivati, vengono rese disponibili determinate auto
 		switch (level) {
@@ -83,21 +89,49 @@ public class SelectCar : MonoBehaviour {
 
 				switch (((GameObject)arrayCars [i]).name) {
 				case "FiatPunto":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
 					CarName.text = "Fiat Punto";
 						break;
 				case "FordFocus":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
+					if (level == 4) {
+						NewCarLeft.text = "new!";
+						NewCarRight.text = "new!";
+					}
 					CarName.text = "Ford Focus";
 					break;
 				case "FordFocusSporca":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
+					if (level == 3) {
+						NewCarLeft.text = "new!";
+						NewCarRight.text = "new!";
+					}
 					CarName.text = "Ford Focus (sporca)";
 					break;
 				case "Pickup":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
+					if(level == 2){
+						NewCarLeft.text = "new!";
+						NewCarRight.text = "new!";
+					}
 					CarName.text = "Pickup";
 					break;
 				case "MitsubishiRally":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
+					if (level == 5) {
+						NewCarLeft.text = "new!";
+						NewCarRight.text = "new!";
+					}
 					CarName.text = "Mitsubishi Rally";
 					break;
 				case "Peugeot206":
+					NewCarLeft.text = "";
+					NewCarRight.text = "";
 					CarName.text = "Peugeot 206";
 					break;
 				}
