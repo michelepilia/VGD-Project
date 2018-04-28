@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39806977, g: 0.37276202, b: 0.29058236, a: 1}
+  m_IndirectSpecularColor: {r: 0.39808753, g: 0.37283567, b: 0.29063863, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -6681,15 +6681,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 751
+      value: 1537
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 808
+      value: 348
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6845,6 +6845,42 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300012, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15381,7 +15417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &810392692
 AudioListener:
   m_ObjectHideFlags: 0
@@ -21512,8 +21548,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1207141751}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 751, y: -194.64636, z: 808}
+  m_LocalRotation: {x: -0.15060382, y: 0.7162242, z: 0.16302924, w: 0.6616365}
+  m_LocalPosition: {x: -1711.679, y: -1439.9751, z: 375.77448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22593,7 +22629,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1283320984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e42bcdc2d0b3a243818066a56666c63, type: 3}
   m_Name: 
@@ -22604,7 +22640,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1283320984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c20ecf4ba02cd154284a0475fd82f49d, type: 3}
   m_Name: 
@@ -36780,7 +36816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2139488558
 MonoBehaviour:
   m_ObjectHideFlags: 0
