@@ -25,17 +25,25 @@ public class CheckpointDesert : MonoBehaviour {
 	public Text NumberOfCheckpoints; //utilizzato per mostrare nell'interfaccia di gioco i checkpoint superati
 
 	//i checkTimeBonus servono per attivare i bonus in secondi a ogni chekpoint superato
-	public bool checkTimeBonus01 = true;
-	public bool checkTimeBonus02 = false;
-	public bool checkTimeBonus03 = false;
-	public bool checkTimeBonus04 = false;
-	public bool checkTimeBonus05 = false;
-	public bool checkTimeBonus06 = false;
-	public bool checkTimeBonus07 = false;
+	public bool checkTimeBonus01;
+	public bool checkTimeBonus02;
+	public bool checkTimeBonus03;
+	public bool checkTimeBonus04;
+	public bool checkTimeBonus05;
+	public bool checkTimeBonus06;
+	public bool checkTimeBonus07;
 
 
 
 	void Start(){
+
+		checkTimeBonus01 = true;
+		checkTimeBonus02 = false;
+		checkTimeBonus03 = false;
+		checkTimeBonus04 = false;
+		checkTimeBonus05 = false;
+		checkTimeBonus06 = false;
+		checkTimeBonus07 = false;
 
 		rb = GetComponent<Rigidbody>();
 		coordinates = new Point ();

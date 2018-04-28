@@ -36,19 +36,19 @@ public class CheckpointForest : MonoBehaviour {
 
 	public Text NumberOfCheckpoints;
 
-	public bool checkTimeBonus01 = false;
-	public bool checkTimeBonus02 = false;
-	public bool checkTimeBonus03 = false;
-	public bool checkTimeBonus04 = false;
-	public bool checkTimeBonus05 = false;
-	public bool checkTimeBonus06 = false;
+	public bool checkTimeBonus01;
+	public bool checkTimeBonus02;
+	public bool checkTimeBonus03;
+	public bool checkTimeBonus04;
+	public bool checkTimeBonus05;
+	public bool checkTimeBonus06;
 
-	public bool checkTimeBonus07 = false;
-	public bool checkTimeBonus08 = false;
-	public bool checkTimeBonus09 = false;
+	public bool checkTimeBonus07;
+	public bool checkTimeBonus08;
+	public bool checkTimeBonus09;
 
-	public bool checkTimeBonus10 = false;
-	public bool checkTimeBonus11 = false;
+	public bool checkTimeBonus10;
+	public bool checkTimeBonus11;
 
 
 	void Start(){
@@ -58,6 +58,20 @@ public class CheckpointForest : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		coordinates = new Point ();
 		carInGame = GameObject.FindGameObjectWithTag ("Car");
+
+		checkTimeBonus01 = false;
+		checkTimeBonus02 = false;
+		checkTimeBonus03 = false;
+		checkTimeBonus04 = false;
+		checkTimeBonus05 = false;
+		checkTimeBonus06 = false;
+
+		checkTimeBonus07 = false;
+		checkTimeBonus08 = false;
+		checkTimeBonus09 = false;
+
+		checkTimeBonus10 = false;
+		checkTimeBonus11 = false;
 
 		switch (level) {
 		case 2:
