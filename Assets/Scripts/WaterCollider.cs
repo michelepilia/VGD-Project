@@ -13,19 +13,34 @@ public class WaterCollider : MonoBehaviour {
 	public Rigidbody rb;
 	public string difficulty;
 
+	ParticleSystem waterSplash;
+	GameObject water;
+	AudioSource audioSplash;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		difficulty = PlayerPrefs.GetString("gameDifficulty");
 		rb = GetComponent<Rigidbody>();
+
+		water = GameObject.Find("Water4Advanced");
+		waterSplash = water.GetComponent<ParticleSystem>();
+		audioSplash = (GameObject.FindGameObjectWithTag("WaterTrigger")).GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		audioSplash.Play();
 	}
 
 	private void OnTriggerEnter (Collider collider) {
 		if (collider.gameObject.tag == "water") {
+			//audioSplash.SetActive (true);
+
+			//Calcola posizione contatto
+			var contact = collider.transform.position;
+			waterSplash.transform.position = contact;
+			waterSplash.Play ();
+
 			if (difficulty.Equals("easy")) {
 				StartCoroutine ("Reposition");
 			} else if (difficulty.Equals("hard")) {
