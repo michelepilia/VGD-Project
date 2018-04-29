@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
@@ -239,7 +239,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 613835994}
     m_Modifications:
-    - target: {fileID: 400000, guid: 977e7278d3486f1489724a6d226b9ca0, type: 2}
+    - target: {fileID: 399999, guid: 977e7278d3486f1489724a6d226b9ca0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 648.145
       objectReference: {fileID: 0}
