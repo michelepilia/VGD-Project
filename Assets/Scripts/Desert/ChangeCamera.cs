@@ -11,18 +11,17 @@ public class ChangeCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		carSignaller = GameObject.FindGameObjectWithTag ("TargetMap");
-		MainCamera.enabled = true;
-		HighCamera.enabled = false;
-		carSignaller.SetActive (false);
+		carSignaller = GameObject.FindGameObjectWithTag ("TargetMap");//segnalino nella camera dall alto	
+		MainCamera.enabled = true; //A inizio gioco abilita la camera principale
+		HighCamera.enabled = false; //Disattiva quella dall'alto
+		carSignaller.SetActive (false); //Disattiva il segnalino 
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.U)) {
-			//MainCamera.enabled = !MainCamera.enabled;
-			HighCamera.enabled = !HighCamera.enabled;
-			carSignaller.SetActive (!(carSignaller.activeSelf));
+			HighCamera.enabled = !HighCamera.enabled; //attivo la high camera, sovrascrivendo la principale (o disattivo)
+			carSignaller.SetActive (!(carSignaller.activeSelf)); //Attiva (o disattiva) il segnalino 
 
 		}
 	}
