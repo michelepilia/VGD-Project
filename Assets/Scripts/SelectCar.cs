@@ -18,6 +18,8 @@ public class SelectCar : MonoBehaviour {
 	public Text NewCarRight;
 	public string selectedCar;
 	public int level;
+	public GameObject leftArrow;
+	public GameObject rightArrow;
 
 	//anche in questo script, le auto vengono gestite attraverso un ArrayList
 	public ArrayList arrayCars = new ArrayList();
@@ -34,28 +36,33 @@ public class SelectCar : MonoBehaviour {
 		//al completamento di ogni livello vengono sbloccate delle auto. In base al livello a cui si è arrivati, vengono rese disponibili determinate auto
 		switch (level) {
 		case 1:
+			leftArrow.SetActive (false);
+			rightArrow.SetActive (false);
 			arrayCars.Add (FiatPunto);
-			arrayCars.Add (Peugeot206);
 			break;
 		case 2:
 			arrayCars.Add (FiatPunto);
 			arrayCars.Add (Peugeot206);
-			arrayCars.Add (Pickup);
 			break;
 		case 3:
 			arrayCars.Add (FiatPunto);
 			arrayCars.Add (Peugeot206);
 			arrayCars.Add (Pickup);
-			arrayCars.Add (FordFocusSporca);
 			break;
 		case 4:
 			arrayCars.Add (FiatPunto);
 			arrayCars.Add (Peugeot206);
 			arrayCars.Add (Pickup);
 			arrayCars.Add (FordFocusSporca);
-			arrayCars.Add (FordFocus);
 			break;
 		case 5:
+			arrayCars.Add (FiatPunto);
+			arrayCars.Add (Peugeot206);
+			arrayCars.Add (Pickup);
+			arrayCars.Add (FordFocusSporca);
+			arrayCars.Add (FordFocus);
+			break;
+		case 6:
 			arrayCars.Add (FiatPunto);
 			arrayCars.Add (Peugeot206);
 			arrayCars.Add (Pickup);
@@ -64,6 +71,7 @@ public class SelectCar : MonoBehaviour {
 			arrayCars.Add (MitsubishiRally);
 			break;
 		}
+
 
 		//attraverso questo for si fa in modo di avere una sola auto abilitata all'avvio della scena
 		for (int i = 0; i < arrayCars.Count; i++) {
@@ -96,7 +104,7 @@ public class SelectCar : MonoBehaviour {
 				case "FordFocus":
 					NewCarLeft.text = "";
 					NewCarRight.text = "";
-					if (level == 4) {
+					if (level == 5) {
 						NewCarLeft.text = "new!";
 						NewCarRight.text = "new!";
 					}
@@ -105,7 +113,7 @@ public class SelectCar : MonoBehaviour {
 				case "FordFocusSporca":
 					NewCarLeft.text = "";
 					NewCarRight.text = "";
-					if (level == 3) {
+					if (level == 4) {
 						NewCarLeft.text = "new!";
 						NewCarRight.text = "new!";
 					}
@@ -114,7 +122,7 @@ public class SelectCar : MonoBehaviour {
 				case "Pickup":
 					NewCarLeft.text = "";
 					NewCarRight.text = "";
-					if(level == 2){
+					if(level == 3){
 						NewCarLeft.text = "new!";
 						NewCarRight.text = "new!";
 					}
@@ -123,7 +131,7 @@ public class SelectCar : MonoBehaviour {
 				case "MitsubishiRally":
 					NewCarLeft.text = "";
 					NewCarRight.text = "";
-					if (level == 5) {
+					if (level == 6) {
 						NewCarLeft.text = "new!";
 						NewCarRight.text = "new!";
 					}
@@ -132,6 +140,10 @@ public class SelectCar : MonoBehaviour {
 				case "Peugeot206":
 					NewCarLeft.text = "";
 					NewCarRight.text = "";
+					if(level == 2){
+						NewCarLeft.text = "new!";
+						NewCarRight.text = "new!";
+					}
 					CarName.text = "Peugeot 206";
 					break;
 				}
@@ -204,6 +216,9 @@ public class SelectCar : MonoBehaviour {
 			SceneManager.LoadScene ("Forest");
 			break;
 		case 5:
+			SceneManager.LoadScene ("Desert2");
+			break;
+		case 6:
 			SceneManager.LoadScene ("Desert2");
 			break;
 		}

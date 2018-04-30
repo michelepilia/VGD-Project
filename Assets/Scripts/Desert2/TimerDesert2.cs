@@ -41,6 +41,17 @@ public class TimerDesert2 : MonoBehaviour {
 
 
 		case 6:
+			bonusTime = 15;
+			totCheckpoints = 4;
+			passedCheckpoints = 0;
+
+			if (difficulty.Equals ("easy")) {
+				timeLeft = 180;
+			} else {
+				timeLeft = 160;
+			}
+
+			actualTime = timeLeft;
 			break;
 		}
 		//parte il countdown

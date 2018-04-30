@@ -13,14 +13,22 @@ public class CheckpointDesert2 : MonoBehaviour {
 
 	public MeshRenderer Checkpoint01;
 	public MeshRenderer Checkpoint02;
+	public MeshRenderer Checkpoint03;
+	public MeshRenderer Checkpoint04;
+	public MeshRenderer Checkpoint05;
+	public MeshRenderer Checkpoint06;
 
 	public int totCheckpoints;
 	public int passedCheckpoints;
 
 	public Text NumberOfCheckpoints;
 
-	public bool checkTimeBonus01 = false;
-	public bool checkTimeBonus02 = false;
+	public bool checkTimeBonus01;
+	public bool checkTimeBonus02;
+	public bool checkTimeBonus03;
+	public bool checkTimeBonus04;
+	public bool checkTimeBonus05;
+	public bool checkTimeBonus06;
 
 
 	void Start(){
@@ -30,6 +38,13 @@ public class CheckpointDesert2 : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		coordinates = new Point ();
 		carInGame = GameObject.FindGameObjectWithTag ("Car");
+
+		checkTimeBonus01 = false;
+		checkTimeBonus02 = false;
+		checkTimeBonus03 = false;
+		checkTimeBonus04 = false;
+		checkTimeBonus05 = false;
+		checkTimeBonus06 = false;
 
 		switch (level) {
 		case 5:
@@ -42,6 +57,10 @@ public class CheckpointDesert2 : MonoBehaviour {
 
 			Checkpoint01.enabled = true;
 			Checkpoint02.enabled = false;
+			Checkpoint03.enabled = false;
+			Checkpoint04.enabled = false;
+			Checkpoint05.enabled = false;
+			Checkpoint06.enabled = false;
 
 			Checkpoint01.tag = "active_checkpoint";
 
@@ -52,6 +71,26 @@ public class CheckpointDesert2 : MonoBehaviour {
 			break;
 		
 		case 6:
+			totCheckpoints = 4;
+			passedCheckpoints = 0;
+
+			NumberOfCheckpoints.text = (passedCheckpoints + "/" + totCheckpoints);
+
+			checkTimeBonus03 = true;
+
+			Checkpoint01.enabled = false;
+			Checkpoint02.enabled = false;
+			Checkpoint03.enabled = true;
+			Checkpoint04.enabled = false;
+			Checkpoint05.enabled = false;
+			Checkpoint06.enabled = false;
+
+			Checkpoint03.tag = "active_checkpoint";
+
+			coordinates.SetX(GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+			coordinates.SetY(GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+			coordinates.SetZ(GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+
 			break;
 		}
 
@@ -92,6 +131,63 @@ public class CheckpointDesert2 : MonoBehaviour {
 				Checkpoint02.enabled = false;
 				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeDesert2");
 				checkTimeBonus02 = false;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+			}
+			break;
+		case "Checkpoint03":
+			if (checkTimeBonus03 == true) {
+				Checkpoint03.tag = "Untagged";
+				Checkpoint04.tag = "active_checkpoint";
+				Checkpoint03.enabled = false;
+				Checkpoint04.enabled = true;
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("updateTimeDesert2");
+				checkTimeBonus03 = false;
+				checkTimeBonus04 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+				coordinates.SetX (GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY (GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ (GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+			}
+			break;
+		case "Checkpoint04":
+			if (checkTimeBonus04 == true) {
+				Checkpoint04.tag = "Untagged";
+				Checkpoint05.tag = "active_checkpoint";
+				Checkpoint04.enabled = false;
+				Checkpoint05.enabled = true;
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("updateTimeDesert2");
+				checkTimeBonus04 = false;
+				checkTimeBonus05 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+				coordinates.SetX (GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY (GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ (GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+			}
+			break;
+		case "Checkpoint05":
+			if (checkTimeBonus05 == true) {
+				Checkpoint05.tag = "Untagged";
+				Checkpoint06.tag = "active_checkpoint";
+				Checkpoint05.enabled = false;
+				Checkpoint06.enabled = true;
+				GameObject.FindGameObjectWithTag ("Car").SendMessage ("updateTimeDesert2");
+				checkTimeBonus05 = false;
+				checkTimeBonus06 = true;
+				Debug.Log (collider.gameObject.name);
+				passedCheckpoints++;
+				coordinates.SetX (GameObject.FindGameObjectWithTag ("Car").transform.position.x);
+				coordinates.SetY (GameObject.FindGameObjectWithTag ("Car").transform.position.y);
+				coordinates.SetZ (GameObject.FindGameObjectWithTag ("Car").transform.position.z);
+			}
+			break;
+		case "Checkpoint06":
+			if (checkTimeBonus06 == true) {
+				Checkpoint06.enabled = false;
+				GameObject.FindGameObjectWithTag("Car").SendMessage("updateTimeDesert2");
+				checkTimeBonus06 = false;
 				Debug.Log (collider.gameObject.name);
 				passedCheckpoints++;
 			}

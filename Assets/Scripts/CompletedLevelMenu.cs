@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 //script che viene lanciato al completamento di ogni livello
@@ -8,16 +9,28 @@ public class CompletedLevelMenu : MonoBehaviour {
 
 	public int level;
 	string modGame;
+	public Text completedLevel;
+	public Text unlockedCar;
+	public GameObject NextLevelButton;
 
 
 	// Use this for initialization
 	void Start () {
 		level = PlayerPrefs.GetInt ("level");//ci si recupera il numero del livello, in modo da poter essere aggiornato
-		
-	}
+		unlockedCar.text = "";
+		completedLevel.text = "";
+		}
 	
 	// Update is called once per frame
 	void Update () {
+		if (level < 6) {
+			unlockedCar.text = "** Nuova auto sbloccata! **";
+			completedLevel.text = "Livello completato!";
+		} else {
+			unlockedCar.text = "";
+			NextLevelButton.SetActive (false);
+			completedLevel.text = "Complimenti! Hai completato il gioco";
+		}
 		
 	}
 

@@ -11356,6 +11356,8 @@ MonoBehaviour:
   NewCarRight: {fileID: 1344356741}
   selectedCar: 
   level: 0
+  leftArrow: {fileID: 517914095}
+  rightArrow: {fileID: 140548807}
 --- !u!1001 &794567995
 Prefab:
   m_ObjectHideFlags: 0
@@ -26398,11 +26400,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f2038b0148b41964d918427290b48f1d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 12a85764d9580dd428f0726ec969e68d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

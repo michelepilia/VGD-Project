@@ -19,7 +19,7 @@ public class ActivateCar : MonoBehaviour {
 	public GameObject Peugeot206;
 	public GameObject carInGame;
 	public ArrayList arrayCars = new ArrayList();//le macchine vengono gestite e mostrate al giocatore attraverso l'utilizzo di un ArrayList
-	string activateCar;
+	public string activateCar;
 	public int level;/*viene incrementato al completamento di ogni livello. Poichè nel forest vengono gestiti 3 livelli, in questo caso va utilizzato
 	per capire se la macchina vi riposizionata all'avvio della scena*/
 	bool reposition;
@@ -78,6 +78,12 @@ public class ActivateCar : MonoBehaviour {
 				RepositionForest03 ();
 			}
 			break;
+		case 6:
+			if(reposition == false){
+				reposition = true;
+				RepositionDesert02 ();
+			}
+			break;
 		}
 
 	}
@@ -95,6 +101,12 @@ public class ActivateCar : MonoBehaviour {
 	void RepositionForest03() {
 		carInGame.transform.position = new Vector3(704.8838f, 5.021035f, 2673.359f); //1537, 0, 348
 		carInGame.transform.rotation = Quaternion.Euler (2.039f, 85.34f, -1.596f);
+		Debug.Log ("riposizionato");
+	}
+
+	void RepositionDesert02() {
+		carInGame.transform.position = new Vector3(3829.558f, 22.48571f, 866.2618f); //1537, 0, 348
+		carInGame.transform.rotation = Quaternion.Euler (0.509f, -11.09f, -0.174f);
 		Debug.Log ("riposizionato");
 	}
 }

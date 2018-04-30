@@ -22264,8 +22264,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1207141751}
-  m_LocalRotation: {x: 0.087172285, y: 0.89959055, z: 0.21045254, w: -0.37262255}
-  m_LocalPosition: {x: 2413.6812, y: -28.781235, z: 886.6812}
+  m_LocalRotation: {x: 0.25891465, y: 0.41456625, z: 0.12430349, w: -0.86350834}
+  m_LocalPosition: {x: 5099.132, y: -889.62354, z: 428.6645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23129,6 +23129,7 @@ GameObject:
   - component: {fileID: 1283320991}
   - component: {fileID: 1283320993}
   - component: {fileID: 1283320992}
+  - component: {fileID: 1283320994}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Compass_Canvas
@@ -23254,6 +23255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  completedLevel: {fileID: 325560611}
+  unlockedCar: {fileID: 1515047784}
+  NextLevelButton: {fileID: 2028268463}
 --- !u!114 &1283320992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23285,7 +23289,88 @@ MonoBehaviour:
   MitsubishiRally: {fileID: 1143033793}
   Peugeot206: {fileID: 275914282}
   carInGame: {fileID: 0}
+  activateCar: 
   level: 0
+--- !u!82 &1283320994
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283320984}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f2038b0148b41964d918427290b48f1d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1289950359 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400056, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
