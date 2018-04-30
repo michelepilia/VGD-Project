@@ -19452,7 +19452,7 @@ GameObject:
   - component: {fileID: 504827585}
   m_Layer: 4
   m_Name: WaterCollider
-  m_TagString: Untagged
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61814,7 +61814,7 @@ GameObject:
   - component: {fileID: 1600875587}
   m_Layer: 4
   m_Name: WaterCollider
-  m_TagString: Untagged
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
