@@ -32,10 +32,10 @@ public class TimerForest : MonoBehaviour {
 			passedCheckpoints = 0;
 
 			if(difficulty.Equals("easy")){
-				timeLeft = 420;
+				timeLeft = 240;
 			}
 			else{
-				timeLeft = 300;
+				timeLeft = 210;
 			}
 
 			actualTime = timeLeft;
