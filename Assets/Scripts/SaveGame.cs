@@ -13,6 +13,8 @@ public class SaveGame : MonoBehaviour {
 	string modGame; //serve a capire se si è avviata una nuova partita e se quindi si deve salvare. serve ad evitare un loop infinito di salvataggi
 	int currentLevel;
 
+	public Text TestoSalvataggioAutomatico;
+
 	void Start()
 	{
 		/*Le prossime 4 variabili corrispondono ai dati di gioco che si vogliono salvare. La quinta è una variabile
@@ -22,6 +24,8 @@ public class SaveGame : MonoBehaviour {
 		currentDifficulty = PlayerPrefs.GetString("gameDifficulty");
 		currentLevel = PlayerPrefs.GetInt ("level");
 		modGame = PlayerPrefs.GetString ("modGame");
+
+		TestoSalvataggioAutomatico.text = "";
 	}
 
 	void Update()
@@ -47,31 +51,17 @@ public class SaveGame : MonoBehaviour {
 		BinaryFormatter bf = new BinaryFormatter();
 		bf.Serialize(file, data);
 		file.Close();
+
+		TestoSalvataggioAutomatico.text = "Salvataggio completato!";
+		TestoSalvataggioAutomatico.color = Color.green;
+
+		StartCoroutine ("SaveGameText");
 	}
 
-	/*public void LoadFile()
+
+	IEnumerator SaveGameText()
 	{
-		string destination = Application.persistentDataPath + "/save.dat";
-		FileStream file;
-
-		if(File.Exists(destination)) file = File.OpenRead(destination);
-		else
-		{
-			Debug.LogError("File not found");
-			return;
-		}
-
-		BinaryFormatter bf = new BinaryFormatter();
-		GameData data = (GameData) bf.Deserialize(file);
-		file.Close();
-
-		currentScene = data.scene;
-		currentCar = data.car;
-		currentDifficulty = data.difficulty;
-		currentLevel = data.level;
-
-		SceneManager.LoadScene (currentScene);
-
-	}*/
+		yield return new WaitForSeconds(3);
+		TestoSalvataggioAutomatico.text = "";	}
 
 }
