@@ -15,8 +15,8 @@ public class WaterCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		difficulty = PlayerPrefs.GetString("gameDifficulty");
-		rb = GetComponent<Rigidbody>();
+		difficulty = PlayerPrefs.GetString("gameDifficulty"); //Ricava la modalità di gioco
+		rb = GetComponent<Rigidbody>(); 
 	}
 
 	// Update is called once per frame
@@ -24,13 +24,13 @@ public class WaterCollider : MonoBehaviour {
 
 	}
 
-	private void OnTriggerEnter (Collider collider) {
-		if (collider.gameObject.tag == "water") {
-			if (difficulty.Equals("easy")) {
-				StartCoroutine ("Reposition");
-			} else if (difficulty.Equals("hard")) {
-				rb.velocity = new  Vector3(0, 0, 0);
-				StartCoroutine ("GameOver");
+	private void OnTriggerEnter (Collider collider) { //All'inizio del contatto
+		if (collider.gameObject.tag == "water") {//se il collider è l'acqua
+			if (difficulty.Equals("easy")) {//se la modalità è facile..
+				StartCoroutine ("Reposition");//..riposiziona
+			} else if (difficulty.Equals("hard")) {//se difficile..
+				rb.velocity = new  Vector3(0, 0, 0);//Ferma la macchina
+				StartCoroutine ("GameOver");//GameOver
 			}
 
 		}
@@ -45,10 +45,10 @@ public class WaterCollider : MonoBehaviour {
 	}
 
 	IEnumerator Reposition() {
-		yield return new WaitForSeconds (0.2f);
-		rb.velocity = new  Vector3(0, 0, 0);
-		yield return new WaitForSeconds (1.0f);
-		GameObject.FindGameObjectWithTag("Car").SendMessage("RepositionCurrentScene");
+		yield return new WaitForSeconds (0.2f);//Aspetta 2 decimi
+		rb.velocity = new  Vector3(0, 0, 0); //Ferma la macchina
+		yield return new WaitForSeconds (1.0f); //Aspetta 1 secondo
+		GameObject.FindGameObjectWithTag("Car").SendMessage("RepositionCurrentScene"); //Riposiziona
 		//transform.rotation = Quaternion.Euler (15.0f, 114.0f, 10.0f);
 		//transform.position = new Vector3(565.05f, 20.0f, 888.0f); //1537, 0, 348
 	}
