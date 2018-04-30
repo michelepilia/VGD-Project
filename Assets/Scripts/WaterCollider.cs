@@ -48,7 +48,8 @@ public class WaterCollider : MonoBehaviour {
 		yield return new WaitForSeconds (0.2f);
 		rb.velocity = new  Vector3(0, 0, 0);
 		yield return new WaitForSeconds (1.0f);
-		transform.rotation = Quaternion.Euler (15.0f, 114.0f, 10.0f);
-		transform.position = new Vector3(565.05f, 20.0f, 888.0f); //1537, 0, 348
+		GameObject.FindGameObjectWithTag("Car").SendMessage("RepositionCurrentScene");
+		//transform.rotation = Quaternion.Euler (15.0f, 114.0f, 10.0f);
+		//transform.position = new Vector3(565.05f, 20.0f, 888.0f); //1537, 0, 348
 	}
 }

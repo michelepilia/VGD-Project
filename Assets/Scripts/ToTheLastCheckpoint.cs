@@ -20,19 +20,26 @@ public class ToTheLastCheckpoint : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			switch (currentScene) {
-			case "Desert":
-				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesertCheckpoint");
-				break;
-			case "Forest":
-				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionForestCheckpoint");
-				break;
-			case "Desert2":
-				GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesert2Checkpoint");
-				break;
-			}
+			RepositionCurrentScene ();
 		}
 		
+	}
+		
+
+
+	void RepositionCurrentScene()
+	{	
+		switch (currentScene) {
+		case "Desert":
+			GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesertCheckpoint");
+			break;
+		case "Forest":
+			GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionForestCheckpoint");
+			break;
+		case "Desert2":
+			GameObject.FindGameObjectWithTag ("Car").SendMessage ("RepositionDesert2Checkpoint");
+			break;
+		}
 	}
 
 }
